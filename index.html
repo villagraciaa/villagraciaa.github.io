@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+gmg<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,13 +17,15 @@
     
     <nav id="desktop-nav">
       <div class="logo">Al Rey Villagracia, PhD
-        <p>Data & Research Scientist | MATLAB, SQL, Python, R, Excel w/ Visual Basic </p>
-        <p> "Turning Complex Data into Practical Everyday Insights" </p>  </div>
+        <p>Data & Research Scientist </p>
+        <p>MATLAB, SQL, Python, R, Excel w/ Visual Basic </p>
+        <p>"Turning Complex Data into Practical Everyday Insights" </p>  </div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -68,13 +70,25 @@
             src="./assets/linkedin.png"
             alt="My LinkedIn profile"
             class="icon"
-            onclick="location.href='https://www.linkedin.com/in/reyvillagracia/'"
+            onclick="window.open('https://www.linkedin.com/in/reyvillagracia/')"
           />
           <img
             src="./assets/github.png"
             alt="My Github profile"
             class="icon"
-            onclick="location.href='https://github.com/villagraciaa'"
+            onclick="window.open('https://github.com/villagraciaa')"
+          />
+          <img
+            src="./assets/coursera.png"
+            alt="My Credly profile"
+            class="icon"
+            onclick="window.open('https://www.coursera.org/learner/alreyvillagracia')"
+          />
+          <img
+            src="./assets/msoft.jpg"
+            alt="My Credly profile"
+            class="icon"
+            onclick="window.open('https://learn.microsoft.com/en-us/users/alreyvillagracia-2850')"
           />
           <img
             src="./assets/credly.svg"
@@ -93,6 +107,12 @@
             alt="Scopus profile"
             class="icon"
             onclick="window.open('https://www.scopus.com/authid/detail.uri?authorId=54892039000')"
+          />
+          <img
+            src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/89321790"
+            alt="IOP Publishing Trusted Reviewer"
+            class="icon"
+            onclick="window.open('https://accreditations.ioppublishing.org/20007b03-8ff2-40b4-b855-7a6e3f851563')"
           />
         </div>
       </div>
@@ -434,62 +454,64 @@
       
     </section>
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
+      <p class="section__text__p1">Click on my Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
-            <div class="article-container">
+            
+            <div class="image-container">
               <img
-                src="./assets/Project_1.png"
+                src="./assets/dataviz.jpg"
                 alt="Project 1"
                 class="project-img"
+                onclick="window.open('https://public.tableau.com/app/profile/al.rey.villagracia/viz/CustomerAnalysis_17474438008530/CustomerAnalysis')"     
+                style="cursor: pointer;"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Customer Analysis Using Tableau</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/villagraciaa/Customer-Analysis-using-Tableau'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://public.tableau.com/app/profile/villagraciaa/viz/CustomerAnalysis_16776858294640/CustomerAnalysis'"
-              >
-                Live Demo
-              </button>
+            <a href='https://public.tableau.com/app/profile/al.rey.villagracia/viz/CustomerAnalysis_17474438008530/CustomerAnalysis' target="_blank" rel="noopener noreferrer">
+              <h2 class="experience-sub-title project-title"> .    </h2>          
+            </a>
+
+            <div class="image-container">
+              <img
+                src="./assets/dataviz.jpg"
+                alt="Project 11"
+                class="project-img"
+                onclick="window.open('https://public.tableau.com/app/profile/al.rey.villagracia/viz/CustomerAnalysis_17474438008530/CustomerAnalysis')"         
+                 style="cursor: pointer;"
+              />
             </div>
+            <a href='https://public.tableau.com/app/profile/al.rey.villagracia/viz/CustomerAnalysis_17474438008530/CustomerAnalysis' target="_blank" rel="noopener noreferrer">
+              <h2 class="experience-sub-title project-title"> .    </h2>          
+            </a>
+            
           </div>
+
+          
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project_2.gif"
+                src="./assets/capm.jpg"
                 alt="Project 2"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">IPL Score Prediction Using Machine Learning</h2>
+            <h2 class="experience-sub-title project-title">Portfolio Theory and Asset Pricing</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/villagraciaa/IPL_Score_Prediction'"
+                onclick="location.href='https://github.com/villagraciaa/portfolio-theory-and-asset-pricing'"
               >
                 Github
               </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo -->
-              </button>
             </div>
           </div>
+          
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project_3.jpg"
+                src="./assets/forecast.webp"
                 alt="Project 3"
                 class="project-img"
               />
@@ -498,7 +520,7 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/villagraciaa/Rossmann_Sales_Forecasting'"
+                onclick="location.href='https://github.com/villagraciaa/Sample_Forecasting'"
               >
                 Github
               <!-- </button>
@@ -510,16 +532,245 @@
               </button>
             </div>
           </div>
+          <br>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/forecast.webp"
+                alt="Project 4"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Simulating Ad Auctions GSP vs. VCG</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://ads-auctions.streamlit.app/'"
+              >
+                Streamlit
+              <!-- </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://ads-auctions.streamlit.app/'"
+              >
+                Live Demo -->
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/forecast.webp"
+                alt="Project 5"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Causal Inference Yelp Ad</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://causal-yelp-ad.streamlit.app/
+'"
+              >
+                Streamlit
+              <!-- </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://causal-yelp-ad.streamlit.app/
+'"
+              >
+                Live Demo -->
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/forecast.webp"
+                alt="Project 6"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">AB Test Design with Network Effects</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://ab-network.streamlit.app/'"
+              >
+                Streamlit
+              <!-- </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://ab-network.streamlit.app/'"
+              >
+                Live Demo -->
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/forecast.webp"
+                alt="Project 7"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Spatial Movement Prediction with indoor Sensor Data</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://spatial-movement-pred.streamlit.app/'"
+              >
+                Streamlit
+              <!-- </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://spatial-movement-pred.streamlit.app/'"
+              >
+                Live Demo -->
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/forecast.webp"
+                alt="Project 8"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Microsoft 365 KPI</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://m365-kpi.streamlit.app/'"
+              >
+                Streamlit
+              <!-- </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://m365-kpi.streamlit.app/'"
+              >
+                Live Demo -->
+              </button>
+            </div>
+          </div>
+
+          <!-- div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/forecast.webp"
+                alt="Project 9"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">AI Supply Chain</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://ai-supplychain.streamlit.app/'"
+              >
+                Streamlit
+              <!-- </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://ai-supplychain.streamlit.app/'"
+              >
+                Live Demo -->
+              </button>
+            </div>
+          </div>   -->
+
+      
+          
         </div>
       </div>
+      
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#contact'"
+        onclick="location.href='./#certifications'"
       />
 
-    </section>
+       
+    <section id="certifications">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Certifications</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/ibmdataanalyst.png"
+                alt="IBM Data Analyst"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">IBM Data Analyst</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://www.coursera.org/account/accomplishments/professional-cert/GTGZ1QUMB42W')"                
+              >
+                Link
+              </button>              
+             </div>
+          </div>
+          <div class="details-container color-container">
+             <div class="article-container">
+              <img
+                src="./assets/AzureAIFun.png"
+                alt="MS Azure AI Fundamentals"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">MS Azure AI</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://learn.microsoft.com/en-us/users/alreyvillagracia-2850/credentials/certification/azure-ai-fundamentals?tab=credentials-tab')"                
+              >
+                Link
+              </button>              
+            </div>
+          </div>
+          <!--div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/89321790"
+                alt="IOP Trusted Reviewer"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">IOP Trusted Reviewer</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://accreditations.ioppublishing.org/20007b03-8ff2-40b4-b855-7a6e3f851563')"                
+              >
+                Link
+              </button>              
+        </div -->
+          </div>
+        </div>
+      </div>
+
+
+
+      
+    <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+    />
+
+    
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
@@ -527,7 +778,7 @@
         <div class="contact-info-container">
           <img
             src="./assets/email.png"
-            alt="Email icon"
+            alt="email icon"
             class="icon contact-icon email-icon"
           />
           <p><a href="mailto:alrey.villagracia@gmail.com">alrey.villagracia@gmail.com</a></p>
@@ -585,6 +836,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
