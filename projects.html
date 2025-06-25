@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Al Rey Villagracia</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Al Rey Villagracia, PhD
+        <p>Data & Research Scientist</p>
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+      </div>
+    </nav>
+
+<style>
+  .tab-btns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .tab-btns button {
+    padding: 10px;
+    cursor: pointer;
+  }
+  .project-section {
+    display: none;
+  }
+  .project-section.active {
+    display: block;
+  }
+  .project-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .project-card img {
+    max-width: 150px;
+    border-radius: 8px;
+  }
+</style>
+
+<section id="projects" style="padding: 40px;">
+  <h1>My Projects</h1>
+  <div class="tab-btns">
+    <button onclick="showTab('search')">🔍 Search & IR</button>
+    <button onclick="showTab('medical')">🧠 Medical Imaging</button>
+    <button onclick="showTab('logistics')">📦 Logistics</button>
+  </div>
+
+  <div id="search" class="project-section active"></div>
+  <div id="medical" class="project-section"></div>
+  <div id="logistics" class="project-section"></div>
+</section>
+
+<script>
+  async function fetchProjects() {
+    const res = await fetch('projects.json');
+    const projects = await res.json();
+
+    const sections = { search: "", medical: "", logistics: "" };
+    projects.forEach(p => {
+      sections[p.category] += `
+        <div class="project-card">
+          <img src="${p.img}" alt="${p.title}">
+          <div>
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+          </div>
+        </div>`;
+    });
+
+    Object.keys(sections).forEach(id => {
+      document.getElementById(id).innerHTML = sections[id];
+    });
+  }
+
+  function showTab(category) {
+    document.querySelectorAll('.project-section').forEach(div => div.classList.remove('active'));
+    document.getElementById(category).classList.add('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', fetchProjects);
+</script>
+
+  </body>
+</html>

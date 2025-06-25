@@ -1,0 +1,20 @@
+[
+  {
+    "category": "search",
+    "title": "Semantic Search & RAG Engine",
+    "desc": "Enterprise doc retrieval using embeddings and LLM-based RAG.",
+    "img": "assets/images/search.png"
+  },
+  {
+    "category": "medical",
+    "title": "3D Medical Image Segmentation",
+    "desc": "Deep learning 3D U-Net pipeline for synchrotron tomography.",
+    "img": "assets/images/medical.png"
+  },
+  {
+    "category": "logistics",
+    "title": "AI-Based Demand-Supply Matching",
+    "desc": "Reinforcement learning with PPO for smart logistics allocation.",
+    "img": "assets/images/logistics.png"
+  }
+]

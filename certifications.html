@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certifications | Al Rey Villagracia</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Al Rey Villagracia, PhD
+        <p>Data & Research Scientist</p>
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+      </div>
+    </nav>
+
+<style>
+  .cert-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .cert-card img {
+    max-width: 180px;
+    border-radius: 6px;
+  }
+</style>
+
+<section id="certifications" style="padding: 40px;">
+  <h1>My Certifications</h1>
+  <div id="certifications-list"></div>
+</section>
+
+<script>
+  const certifications = [
+    {
+      title: "IBM Data Analyst Certificate",
+      source: "IBM / Coursera",
+      image: "assets/images/ibm.png"
+    },
+    {
+      title: "Microsoft Azure AI Fundamentals",
+      source: "Microsoft",
+      image: "assets/images/azure.png"
+    },
+    {
+      title: "Google Data Analytics Certificate",
+      source: "Google / Coursera",
+      image: "assets/images/google.png"
+    }
+  ];
+
+  function renderCertifications() {
+    const container = document.getElementById('certifications-list');
+    container.innerHTML = certifications.map(cert => `
+      <div class="cert-card">
+        <img src="${cert.image}" alt="${cert.title}">
+        <div>
+          <h3>${cert.title}</h3>
+          <p>${cert.source}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', renderCertifications);
+</script>
+
+  </body>
+</html>
