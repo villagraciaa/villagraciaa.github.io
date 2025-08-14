@@ -9,7 +9,6 @@
     h1, h2 { color: #2c3e50; }
     h2 { border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 32px; }
 
-    /* Top nav (external links) */
     nav.top {
       position: fixed; top: 0; right: 0; background: #fff; padding: 10px 20px;
       border-bottom-left-radius: 10px; box-shadow: -2px 2px 10px rgba(0,0,0,0.1); z-index: 1000;
@@ -17,7 +16,6 @@
     nav.top a { margin-left: 20px; text-decoration: none; color: #3498db; font-weight: 600; font-size: 14px; }
     nav.top a:hover { text-decoration: underline; }
 
-    /* Tabs */
     .tabs { display: flex; gap: 10px; margin: 10px 0 20px 0; flex-wrap: wrap; }
     .tab-btn {
       appearance: none; border: 1px solid #d0d7de; background: #fff; color: #2c3e50;
@@ -28,7 +26,6 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* Tables & lists */
     table {
       width: 100%; border-collapse: collapse; margin-top: 30px; background: #fff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 14px;
@@ -42,36 +39,11 @@
     li { margin-bottom: 8px; }
     .tag { display: inline-block; padding: 2px 8px; margin-left: 6px; font-size: 11px; color: #fff; background: #6c757d; border-radius: 10px; }
 
-    /* Meta list under projects */
     ul.meta { margin: 6px 0 12px 18px; padding-left: 12px; color: #3d4f60; font-size: 13px; }
     ul.meta li { margin: 2px 0; }
     ul.meta em { color: #22313f; font-style: normal; font-weight: 600; }
 
-    /* Certifications layout */
-    .cluster { margin: 18px 0; scroll-margin-top: 80px; }
-    .cluster h3 { margin-bottom: 8px; }
-    .badge {
-      display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #e9f4ff; color: #1b4f72;
-      border: 1px solid #cfe6ff; margin-left: 6px; vertical-align: middle;
-    }
-    .hint { font-size: 12px; color: #556; }
-
-    /* Legend chips */
-    .legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
-    .chip {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 10px; border: 1px solid #d0d7de; background: #fff; border-radius: 999px;
-      font-size: 13px; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    }
-    .chip:hover { background: #f0f7ff; border-color: #b6d6ff; }
-    .chip .count {
-      display: inline-block; min-width: 20px; text-align: center; padding: 2px 6px; border-radius: 999px;
-      background: #2980b9; color: #fff; font-weight: 700; font-size: 12px;
-    }
-    .chip.all { background: #2980b9; color: #fff; border-color: #2980b9; }
-    .chip.all .count { background: rgba(255,255,255,0.2); }
-
-    /* Search */
+    /* Certifications */
     .searchbar { margin: 8px 0 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .searchbar input[type="search"] {
       flex: 1 1 320px; padding: 10px 12px; border-radius: 10px; border: 1px solid #d0d7de; background: #fff; font-size: 14px;
@@ -103,7 +75,7 @@
 
   <!-- ================= Projects ================= -->
   <section id="panel-portfolio" class="tab-panel active" role="tabpanel" aria-labelledby="tab-portfolio">
-    <!-- Your full Projects content (as in your latest version) -->
+    <!-- (Projects content preserved) -->
     <h2>Data Engineering & Pipelines</h2>
     <ul>
       <li><strong><a href="https://faculty-scheduler.streamlit.app">Faculty Load Assignment System</a></strong> (2022–2024)<br>
@@ -458,21 +430,16 @@
     </table>
   </section>
 
-  <!-- ================= Certifications ================= -->
+  <!-- ================= Certifications (single alphabetized list) ================= -->
   <section id="panel-certs" class="tab-panel" role="tabpanel" aria-labelledby="tab-certs">
     <h2>Certifications</h2>
 
-    <!-- Search -->
     <div class="searchbar">
       <input id="cert-search" type="search" placeholder="Filter by title or issuer…" aria-label="Filter certifications" />
       <button class="clear" id="clear-search" type="button">Clear</button>
     </div>
 
-    <!-- Cluster legend (scroll-to) -->
-    <div id="legend" class="legend" aria-label="Certification clusters"></div>
-
-    <!-- Dynamic clustered list -->
-    <div id="cert-output"></div>
+    <ul id="cert-list"></ul>
 
     <h3>Badge Portfolios & Evidence</h3>
     <ul>
@@ -480,13 +447,12 @@
       <li><a href="https://badges.wes.org/Evidence?i=287ba744-1800-45e1-b407-65a2e4f5244c&type=ca" target="_blank" rel="noopener noreferrer">WES — Evidence</a></li>
       <li><a href="https://drive.google.com/file/d/1NegXjep1r3HGAhQK4KOc7_MypALQdCMQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Coursera Certificates (PDF)</a></li>
     </ul>
-    <p class="hint">Grouped by category. Titles are alphabetized; issuer shown in parentheses.</p>
   </section>
 
   <div class="footer">© 2025 Al Rey Villagracia</div>
 
   <script>
-    /* ========== Tabs ========== */
+    /* Tabs */
     const tabs = Array.from(document.querySelectorAll('.tab-btn'));
     const panels = {
       portfolio: document.getElementById('panel-portfolio'),
@@ -508,7 +474,7 @@
     const initial = (location.hash || '#portfolio').replace('#', '');
     if (['portfolio','certs'].includes(initial)) activateTab(initial);
 
-    /* ========== CSV read & parse ========== */
+    /* CSV utilities */
     async function loadCSV(path) {
       const res = await fetch(path, { cache: 'no-store' });
       if (!res.ok) throw new Error('Failed to load ' + path + ' (' + res.status + ')');
@@ -538,8 +504,7 @@
         company: col([/company|issuer|provider|organization|org/i]),
         title: col([/title|name|course|cert/i]),
         link: col([/link|url|cert\s*links?|certificate/i]),
-        desc: col([/description|summary|pdf/i]),
-        category: col([/category|cluster|domain|track|group/i])
+        desc: col([/description|summary|pdf/i])
       };
     }
     function rowsToItems(rows) {
@@ -552,203 +517,68 @@
           provider: cols.company >= 0 ? r[cols.company] : '',
           title: cols.title >= 0 ? r[cols.title] : (r[0] || '').trim(),
           link: cols.link >= 0 ? r[cols.link] : '',
-          description: cols.desc >= 0 ? r[cols.desc] : '',
-          category: cols.category >= 0 ? r[cols.category] : ''
+          description: cols.desc >= 0 ? r[cols.desc] : ''
         };
         if (Object.values(it).some(v => (v || '').trim() !== '')) items.push(it);
       }
       return items;
     }
 
-    /* ========== Clustering (robust mapping + Business split) ========== */
-    const ORDERED_CLUSTERS = [
-      'Data Science & Analytics',
-      'Machine Learning & AI',
-      'Prompt Engineering & GenAI Apps',
-      'BI & Dashboards',
-      'Product & Project Management',
-      'Cloud Platforms',
-      'DevOps & Infrastructure',
-      'Big Data & Spark',
-      'Finance & Quantitative Analysis',
-      'Other / Domain-Specific'
-    ];
-    const slugify = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
-    const norm = (s='') => String(s).replace(/[–—−]/g,'-').replace(/\s+/g,' ').trim();
-    const low  = (s='') => norm(s).toLowerCase();
-
-    const ALIASES = new Map([
-      // Prompt/GenAI
-      ['genai','Prompt Engineering & GenAI Apps'],
-      ['prompt engineering','Prompt Engineering & GenAI Apps'],
-      ['prompt engineering & genai apps','Prompt Engineering & GenAI Apps'],
-      ['generative ai','Prompt Engineering & GenAI Apps'],
-      // ML/AI
-      ['ml','Machine Learning & AI'], ['machine learning','Machine Learning & AI'], ['ai','Machine Learning & AI'],
-      // DS/Analytics
-      ['data science','Data Science & Analytics'], ['analytics','Data Science & Analytics'], ['data science & analytics','Data Science & Analytics'],
-      // Cloud
-      ['cloud','Cloud Platforms'], ['cloud platforms','Cloud Platforms'],
-      // DevOps/Infra
-      ['devops','DevOps & Infrastructure'], ['infrastructure','DevOps & Infrastructure'], ['devops & infrastructure','DevOps & Infrastructure'],
-      // Big Data
-      ['big data','Big Data & Spark'], ['spark','Big Data & Spark'],
-      // Finance
-      ['finance','Finance & Quantitative Analysis'], ['accounting','Finance & Quantitative Analysis'],
-      // Business (legacy label to split)
-      ['business analytics & bi','BUSINESS_SPLIT'], ['business analytics','BUSINESS_SPLIT'],
-      // Directs
-      ['bi','BI & Dashboards'], ['product management','Product & Project Management'], ['project management','Product & Project Management']
-    ]);
-    const KW = {
-      prompt: ['prompt','vertex ai','gemini','llm','chatbot','rag','generative ai','gpt','langchain'],
-      mlai:   ['machine learning','deep learning','neural','artificial intelligence','nlp','transformer','pytorch','keras','tensorflow','scikit-learn'],
-      dsa:    ['data analysis','data analyst','statistics','statistical','pandas','excel','visualization','plotly','a/b','ab testing','sql','eda'],
-      bi:     ['power bi','business intelligence','tableau','looker','dashboard','excel dashboard','reporting','visualization'],
-      ppm:    ['project management','pmp','scrum','kanban','agile','product management','roadmap'],
-      cloud:  ['azure','aws','gcp','google cloud','cloud computing','virtual machine','vm','hyper-v'],
-      devops: ['kubernetes','docker','devops','jenkins','ci/cd','github actions','infrastructure as code','iac','k8s'],
-      bigdata:['spark','pyspark','big data','hadoop'],
-      fin:    ['finance','accounting','financial','portfolio','budget','bookkeep','quickbooks','cpa','statement']
-    };
-    const IN = (hay, arr) => arr.some(k => hay.includes(k));
-
-    function normalizeCategory(category, title, description) {
-      const t = low(title), d = low(description), hay = (t + ' ' + d).trim();
-      const raw = low(category);
-      if (raw) {
-        const alias = ALIASES.get(raw) || null;
-        if (alias && alias !== 'BUSINESS_SPLIT') return alias;
-        if (alias === 'BUSINESS_SPLIT') {
-          if (IN(hay, KW.bi))  return 'BI & Dashboards';
-          if (IN(hay, KW.ppm)) return 'Product & Project Management';
-          if (/dashboard|visual/i.test(hay)) return 'BI & Dashboards';
-          return 'Product & Project Management';
-        }
-        if (ORDERED_CLUSTERS.includes(norm(category))) return norm(category);
-      }
-      if (IN(hay, KW.prompt)) return 'Prompt Engineering & GenAI Apps';
-      if (IN(hay, KW.mlai))   return 'Machine Learning & AI';
-      if (IN(hay, KW.dsa))    return 'Data Science & Analytics';
-      if (IN(hay, KW.bi))     return 'BI & Dashboards';
-      if (IN(hay, KW.ppm))    return 'Product & Project Management';
-      if (IN(hay, KW.cloud))  return 'Cloud Platforms';
-      if (IN(hay, KW.devops)) return 'DevOps & Infrastructure';
-      if (IN(hay, KW.bigdata))return 'Big Data & Spark';
-      if (IN(hay, KW.fin))    return 'Finance & Quantitative Analysis';
-      return 'Other / Domain-Specific';
-    }
-
-    function groupAlphabetize(items) {
-      const map = new Map();
-      items.forEach(it => {
-        const key = normalizeCategory(it.category, it.title, it.description);
-        if (!map.has(key)) map.set(key, []);
-        map.get(key).push(it);
-      });
-      for (const [k, arr] of map.entries()) {
-        arr.sort((a, b) => (norm(a.title) || '').localeCompare(norm(b.title) || ''));
-      }
-      const known = ORDERED_CLUSTERS.filter(name => map.has(name));
-      const extras = Array.from(map.keys()).filter(k => !ORDERED_CLUSTERS.includes(k)).sort();
-      return { map, ordered: [...known, ...extras] };
-    }
-
-    /* ========== Render (legend + groups) ========== */
-    let ALL_ITEMS = [];  // from CSV
-
-    function renderLegend(ordered, map) {
-      const legend = document.getElementById('legend');
-      legend.innerHTML = '';
-      const total = Array.from(map.values()).reduce((n, arr) => n + arr.length, 0);
-
-      // "All" chip scrolls back to top of list
-      const allChip = document.createElement('button');
-      allChip.className = 'chip all';
-      allChip.innerHTML = `<span>All</span><span class="count">${total}</span>`;
-      allChip.onclick = () => window.scrollTo({ top: document.getElementById('cert-output').offsetTop - 20, behavior: 'smooth' });
-      legend.appendChild(allChip);
-
-      ordered.forEach(cluster => {
-        const count = (map.get(cluster) || []).length;
-        const chip = document.createElement('button');
-        chip.className = 'chip';
-        chip.innerHTML = `<span>${cluster}</span><span class="count">${count}</span>`;
-        chip.onclick = () => {
-          const el = document.getElementById('cluster-' + slugify(cluster));
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        };
-        legend.appendChild(chip);
+    /* Render certifications (single list, alphabetized by Title) */
+    let ALL_CERTS = [];
+    function renderList(items) {
+      const ul = document.getElementById('cert-list');
+      ul.innerHTML = '';
+      const sorted = items.slice().sort((a,b) => (a.title||'').localeCompare(b.title||''));
+      sorted.forEach(it => {
+        const prov = it.provider ? ` (${it.provider})` : '';
+        const title = it.title || '(Untitled)';
+        const link = (it.link || '').trim();
+        const li = document.createElement('li');
+        li.innerHTML = link && /^https?:\/\//i.test(link)
+          ? `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>${prov}`
+          : `${title}${prov}`;
+        ul.appendChild(li);
       });
     }
 
-    function renderCerts(items) {
-      const out = document.getElementById('cert-output');
-      out.innerHTML = '';
-      const { map, ordered } = groupAlphabetize(items);
-      renderLegend(ordered, map);
-
-      ordered.forEach(cluster => {
-        const list = map.get(cluster);
-        if (!list || !list.length) return;
-        const wrap = document.createElement('div');
-        wrap.className = 'cluster';
-        wrap.id = 'cluster-' + slugify(cluster);
-        wrap.innerHTML = `<h3>${cluster} <span class="badge">${list.length}</span></h3>`;
-        const ul = document.createElement('ul');
-        list.forEach(it => {
-          const prov = it.provider ? ` (${it.provider})` : '';
-          const link = (it.link || '').trim();
-          const title = it.title || '(Untitled)';
-          const li = document.createElement('li');
-          li.innerHTML = link && /^https?:\/\//i.test(link)
-            ? `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>${prov}`
-            : `${title}${prov}`;
-          ul.appendChild(li);
-        });
-        wrap.appendChild(ul);
-        out.appendChild(wrap);
-      });
-    }
-
-    /* ========== Search (title or issuer) ========== */
+    /* Search */
     function applyFilter(query) {
       const q = (query || '').toLowerCase().trim();
-      if (!q) return ALL_ITEMS.slice();
-      return ALL_ITEMS.filter(it => {
+      if (!q) return ALL_CERTS.slice();
+      return ALL_CERTS.filter(it => {
         const t = (it.title || '').toLowerCase();
         const p = (it.provider || '').toLowerCase();
         return t.includes(q) || p.includes(q);
       });
     }
-    function debounce(fn, d=180){ let to=null; return (...a)=>{ clearTimeout(to); to=setTimeout(()=>fn(...a),d); }; }
+    function debounce(fn, d=150){ let to=null; return (...a)=>{ clearTimeout(to); to=setTimeout(()=>fn(...a),d); }; }
     const onSearch = debounce(() => {
       const q = document.getElementById('cert-search').value;
-      renderCerts(applyFilter(q));
-    }, 150);
+      renderList(applyFilter(q));
+    }, 120);
 
-    /* ========== Boot ========== */
+    /* Boot */
     (async function init() {
       try {
         const text = await loadCSV('CourseraCerts.csv');
         const rows = parseCSV(text);
-        ALL_ITEMS = rowsToItems(rows);
-        renderCerts(ALL_ITEMS);
+        ALL_CERTS = rowsToItems(rows);
+        renderList(ALL_CERTS);
 
-        // Wire search + clear
         document.getElementById('cert-search').addEventListener('input', onSearch);
         document.getElementById('clear-search').addEventListener('click', () => {
           const inp = document.getElementById('cert-search');
           inp.value = '';
-          renderCerts(ALL_ITEMS);
+          renderList(ALL_CERTS);
           inp.focus();
         });
       } catch (e) {
         console.error('Could not read CourseraCerts.csv. Serve locally via http and verify filename.', e);
-        document.getElementById('cert-output').innerHTML =
-          '<p style="color:#7f1d1d;background:#fff1f2;border:1px solid #f5c2c7;padding:10px;border-radius:8px;">' +
+        document.getElementById('cert-list').innerHTML =
+          '<li style="color:#7f1d1d;background:#fff1f2;border:1px solid #f5c2c7;padding:10px;border-radius:8px;list-style:none;">' +
           'Could not read CourseraCerts.csv from this folder. Please serve this page via a local server and verify the filename.' +
-          '</p>';
+          '</li>';
       }
     })();
   </script>
