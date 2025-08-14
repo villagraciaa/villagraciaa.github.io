@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Al Rey Villagracia | Portfolio & Certificates </title>
+  <title>Al Rey Villagracia | Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 40px; background: #f4f7fb; color: #333; }
@@ -43,8 +43,6 @@
     .tag { display: inline-block; padding: 2px 8px; margin-left: 6px; font-size: 11px; color: #fff;
            background: #6c757d; border-radius: 10px; vertical-align: middle; }
     .tag.new { background: #27ae60; }
-    .tag.soon { background: #f39c12; }
-    .tag.update { background: #8e44ad; }
 
     /* Mini spec list */
     ul.meta { margin: 6px 0 12px 18px; padding-left: 12px; color: #3d4f60; font-size: 13px; }
@@ -52,7 +50,7 @@
     ul.meta em { color: #22313f; font-style: normal; font-weight: 600; }
 
     /* Certifications helpers */
-    .cluster { margin: 18px 0; }
+    .cluster { margin: 18px 0; scroll-margin-top: 80px; }
     .cluster h3 { margin-bottom: 8px; }
     .badge {
       display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #e9f4ff; color: #1b4f72;
@@ -61,14 +59,41 @@
     .hint { font-size: 12px; color: #556; }
 
     .status {
-      margin: 12px 0 18px; padding: 10px 12px; border-radius: 10px; display: inline-flex; gap: 10px; align-items: center;
+      margin: 12px 0 8px; padding: 10px 12px; border-radius: 10px; display: inline-flex; gap: 10px; align-items: center;
       border: 1px solid #d0e6d9; background: #eefaf1; color: #1d5f2e; font-weight: 600;
     }
     .status.error { border-color: #f5c2c7; background: #fff1f2; color: #7f1d1d; }
     .status .dot { width: 10px; height: 10px; border-radius: 50%; background: #27ae60; }
     .status.error .dot { background: #e74c3c; }
 
-    /* Footer */
+    /* Legend chips */
+    .legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 10px; border: 1px solid #d0d7de; background: #fff; border-radius: 999px;
+      font-size: 13px; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .chip:hover { background: #f0f7ff; border-color: #b6d6ff; }
+    .chip .count {
+      display: inline-block; min-width: 20px; text-align: center; padding: 2px 6px; border-radius: 999px;
+      background: #2980b9; color: #fff; font-weight: 700; font-size: 12px;
+    }
+    .chip.all { background: #2980b9; color: #fff; border-color: #2980b9; }
+    .chip.all .count { background: rgba(255,255,255,0.2); }
+
+    /* Search */
+    .searchbar {
+      margin: 8px 0 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    }
+    .searchbar input[type="search"] {
+      flex: 1 1 320px; padding: 10px 12px; border-radius: 10px; border: 1px solid #d0d7de; background: #fff;
+      font-size: 14px;
+    }
+    .searchbar .clear {
+      padding: 8px 12px; border-radius: 10px; border: 1px solid #d0d7de; background: #fff; cursor: pointer; font-weight: 600;
+    }
+    .searchbar .clear:hover { background: #f0f7ff; border-color: #b6d6ff; }
+
     .footer { font-size: 12px; color: #777; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
   </style>
 </head>
@@ -80,7 +105,7 @@
     <a href="https://share.streamlit.io/user/villagraciaa" target="_blank" rel="noopener noreferrer">Streamlit Cloud Applications</a>
   </nav>
 
-  <h1>My Project Portfolio & Certificates</h1>
+  <h1>My Project Portfolio</h1>
   <p><strong>By: Al Rey Villagracia</strong></p>
 
   <!-- Tabs -->
@@ -91,590 +116,40 @@
 
   <!-- ===== Projects Panel ===== -->
   <section id="panel-portfolio" class="tab-panel active" role="tabpanel" aria-labelledby="tab-portfolio">
-
-    <!-- ======= PORTFOLIO CONTENT (latest version you shared) ======= -->
-    <h2>Data Engineering & Pipelines</h2>
-    <ul>
-      <li><strong><a href="https://faculty-scheduler.streamlit.app">Faculty Load Assignment System</a></strong> (2022–2024)<br>
-          Automated course–faculty matching with policy-aware constraints.
-          <ul class="meta">
-            <li><em>Objectives:</em> Eliminate allocation conflicts, meet max unit loads, keep location/day coherence.</li>
-            <li><em>Key Features:</em> Availability parsing, decision-tree rules, load balancing, violation flags, summary KPIs.</li>
-            <li><em>Tech:</em> Python, pandas, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> 100% of prior conflicts resolved; faster committee approvals.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://clouddata.streamlit.app/">Cloud Data Engineering Simulator</a></strong> (2025)<br>
-          DAG-style orchestration with DBT-like SQL transforms and REST ingestion.
-          <ul class="meta">
-            <li><em>Objectives:</em> Teach/data-room demo for cloud ELT patterns.</li>
-            <li><em>Key Features:</em> Node/edge editor, schema lineage, incremental loads, data quality checks.</li>
-            <li><em>Tech:</em> Streamlit, DuckDB, SQL (DBT-style), REST.</li>
-            <li><em>Impact:</em> Cut onboarding time for analysts by ~30% via hands-on simulations.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Dashboards & KPI Reporting</h2>
-    <ul>
-      <li><strong><a href="https://m365-kpi.streamlit.app/">Digital Adoption Dashboard</a></strong> (2025)<br>
-          M365 usage funnels, cohort uptake, and feature adoption KPIs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Centralize adoption telemetry for business stakeholders.</li>
-            <li><em>Key Features:</em> Funnel views, active/DAU/MAU trends, feature heatmaps, alerts.</li>
-            <li><em>Tech:</em> Streamlit, Plotly, pandas.</li>
-            <li><em>Impact:</em> Identified low-uptake features; drove targeted enablement.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://shdi-dashboard.streamlit.app/">SHDI Analysis Dashboard</a></strong> (2024)<br>
-          Canada Subnational Human Development Index explorer.
-          <ul class="meta">
-            <li><em>Objectives:</em> Reveal regional disparities across education, health, income.</li>
-            <li><em>Key Features:</em> Time-series by region, map overlays, distribution plots.</li>
-            <li><em>Tech:</em> pandas, seaborn, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Supported policy discussions on targeted interventions.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://hospitalit.streamlit.app/" title="Deployed app/repo link ">Hospitality ETL + KPIs + Forecasts</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Property/segment ETL with forecasting and interval bands.
-          <ul class="meta">
-            <li><em>Objectives:</em> Unify ADR/RevPAR dashboards with model-aware uncertainty.</li>
-            <li><em>Key Features:</em> Model selector, prediction intervals, remarks panel, volatility fallback.</li>
-            <li><em>Tech:</em> Python, SQLite, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Clearer decisions on promo timing and occupancy targets.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Scientific & Lab Automation</h2>
-    <ul>
-      <li><strong><a href="https://data-spectroscopy.streamlit.app/" title="Deployed app/repo link ">Spectroscopy Data Workflow Optimization</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Batch cleaning/normalization/visualization for spectroscopy runs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Reduce manual prep and normalize across instruments/batches.</li>
-            <li><em>Key Features:</em> Baseline correction, peak detect/integration, QC flags, batch compare.</li>
-            <li><em>Tech:</em> Python, numpy/pandas, Streamlit, Plotly.</li>
-            <li><em>Impact:</em> ~40% throughput improvement in experiment cycles.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Machine Learning & AI</h2>
-    <ul>
-      <li><strong><a href="https://polymer-predictor.streamlit.app">Open Polymer Property Prediction</a></strong> (2025)<br>
-          ML for density, k, Tg, Rg, FFV from SMILES.
-          <ul class="meta">
-            <li><em>Objectives:</em> Rapid screening of candidate polymers.</li>
-            <li><em>Key Features:</em> RDKit descriptors, LightGBM models, CV w/ wMAE metric.</li>
-            <li><em>Tech:</em> RDKit, LightGBM, scikit-learn, Streamlit.</li>
-            <li><em>Impact:</em> Prioritized candidates, cut wet-lab trials.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://ai-supplychain.streamlit.app/">Demand-Supply RL Matching System</a></strong> (2025)<br>
-          Q-learning & PPO for dynamic allocation.
-          <ul class="meta">
-            <li><em>Objectives:</em> Lift fill-rate and reduce unmet demand under constraints.</li>
-            <li><em>Key Features:</em> RL vs LP baseline, reward curves, scenario stress tests.</li>
-            <li><em>Tech:</em> Python, Stable-Baselines3 (PPO), NumPy, Streamlit.</li>
-            <li><em>Impact:</em> Higher fill-rate vs baseline in variable demand regimes.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Document & Semantic Search</h2>
-    <ul>
-      <li><strong><a href="https://makeresume.streamlit.app/">Resume Parser + Formatter</a></strong> (2024)<br>
-          Skills extraction, match scores, export-ready templates.
-          <ul class="meta">
-            <li><em>Objectives:</em> Speed up resume tailoring and ATS alignment.</li>
-            <li><em>Key Features:</em> Section detection, quantified bullets, job-match scoring.</li>
-            <li><em>Tech:</em> python-docx, regex, pandas, Streamlit.</li>
-            <li><em>Impact:</em> Consistent, ATS-friendly output in minutes.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://rag-docs.streamlit.app">Semantic Search & RAG Engine</a></strong> (2024)<br>
-          Hybrid retrieval + LLM synthesis for enterprise docs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Trustworthy answers with source-grounding.</li>
-            <li><em>Key Features:</em> FAISS vectors, chunking, source-cited responses, preview.</li>
-            <li><em>Tech:</em> LangChain, FAISS, OpenAI API, Streamlit.</li>
-            <li><em>Impact:</em> Reduced time-to-answer for knowledge queries.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Security & Compliance</h2>
-    <ul>
-      <li><strong><a href="https://securehealth-db.streamlit.app">SecureHealth MySQL System</a></strong> (2025)<br>
-          HIPAA/GDPR-aligned patient DB with encryption and RBAC.
-          <ul class="meta">
-            <li><em>Objectives:</em> Secure PHI access and auditability.</li>
-            <li><em>Key Features:</em> AES-at-rest, role policies, audit logs, masked views.</li>
-            <li><em>Tech:</em> MySQL, SQL, Python admin scripts.</li>
-            <li><em>Impact:</em> Tightened least-privilege and compliance posture.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Media Processing & Computer Vision</h2>
-    <ul>
-      <li><strong><a href="https://combine-videos.streamlit.app/">Video Overlay Studio (Logo/Text/Watermark)</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Composer for logo/text overlays and clip compositing.
-          <ul class="meta">
-            <li><em>Objectives:</em> Fast social-ready exports from raw clips.</li>
-            <li><em>Key Features:</em> Alpha PNG logos, corner placement, timeline trims, MP4 export.</li>
-            <li><em>Tech:</em> MoviePy, OpenCV, Streamlit.</li>
-            <li><em>Impact:</em> Minutes to branded assets, not hours.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://glowcam.streamlit.app/">Beautify Filter App</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Portrait smoothing/tone/detail enhancement.
-          <ul class="meta">
-            <li><em>Objectives:</em> Gentle beautification without plastic look.</li>
-            <li><em>Key Features:</em> Face-aware masks, bilateral/gaussian blends, color/tone curves.</li>
-            <li><em>Tech:</em> Python, OpenCV, mediapipe (optional).</li>
-            <li><em>Impact:</em> Consistent on-device style previews.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Research & Simulation</h2>
-    <ul>
-      <li><strong><a href="https://causal-yelp-ad.streamlit.app/">Ad Causal Inference Simulator</a></strong> (2025)<br>
-          Cluster randomization with interference modeling.
-          <ul class="meta">
-            <li><em>Objectives:</em> Quantify bias under spillovers.</li>
-            <li><em>Key Features:</em> Network generators, estimators, power/bias plots.</li>
-            <li><em>Tech:</em> Python, NetworkX, numpy, Streamlit.</li>
-            <li><em>Impact:</em> Better design choices for marketing experiments.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://cam-car-strategy.streamlit.app">Cam Car Strategy Simulation</a></strong> (2024)<br>
-          Product strategy exploration with competitive forces.
-          <ul class="meta">
-            <li><em>Objectives:</em> Scenario-plan market entry.</li>
-            <li><em>Key Features:</em> Five-Forces sliders, payoff grids, sensitivity views.</li>
-            <li><em>Tech:</em> Python, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Clarified tradeoffs for leadership.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://ltc-microsimulation.streamlit.app/">LTC Microsimulations for Aging Population Planning</a></strong> (2024)<br>
-          Demand/capacity planning for long-term care.
-          <ul class="meta">
-            <li><em>Objectives:</em> Forecast needs by age/acuity.</li>
-            <li><em>Key Features:</em> Transition matrices, cost models, capacity constraints.</li>
-            <li><em>Tech:</em> Python, pandas, Streamlit.</li>
-            <li><em>Impact:</em> Supported budget allocation proposals.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://ad-auctions.streamlit.app">Simulating Ad Auctions: GSP vs. VCG</a></strong> (May 2025)<br>
-          Mechanism comparison for revenue vs. efficiency.
-          <ul class="meta">
-            <li><em>Objectives:</em> Understand incentives & revenue tradeoffs.</li>
-            <li><em>Key Features:</em> Bid distributions, CTR curves, welfare/revenue charts.</li>
-            <li><em>Tech:</em> Python, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Showed GSP +15% revenue vs baseline; VCG 100% efficiency.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://abtest-network.streamlit.app">A/B Test Design with Network Effects</a></strong> (2025)<br>
-          Naive vs. cluster-randomized comparisons.
-          <ul class="meta">
-            <li><em>Objectives:</em> Measure interference-driven bias.</li>
-            <li><em>Key Features:</em> Graph topologies, spillover knobs, power curves.</li>
-            <li><em>Tech:</em> Python, NetworkX, Streamlit.</li>
-            <li><em>Impact:</em> Recommended cluster designs for social products.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://spatial-movement-pred.streamlit.app">Spatial Movement Analysis</a></strong> (Apr 2025)<br>
-          Indoor flow analytics for space planning.
-          <ul class="meta">
-            <li><em>Objectives:</em> Identify congestion and optimize layout.</li>
-            <li><em>Key Features:</em> Heatmaps, peak windows, path funnels, DBT lineage.</li>
-            <li><em>Tech:</em> Python, SQL, DBT, Plotly.</li>
-            <li><em>Impact:</em> Informed floor redesign; improved utilization.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://threat-detnet.streamlit.app/">Threat Attribution using Graph Neural Networks (GNN)</a></strong> (2025)<br>
-          Actor attribution from behavior graphs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Lift detection & attribution precision.</li>
-            <li><em>Key Features:</em> Heterogeneous graphs, node embeddings, ROC/PR plots.</li>
-            <li><em>Tech:</em> PyTorch Geometric, scikit-learn, Streamlit.</li>
-            <li><em>Impact:</em> +35% accuracy vs baseline heuristics.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://player-analytics2.streamlit.app/">Player Behavior Analytics in Online Gaming</a></strong> (2024)<br>
-          Segmentation & churn risk analysis.
-          <ul class="meta">
-            <li><em>Objectives:</em> Personalize engagement campaigns.</li>
-            <li><em>Key Features:</em> RFM/k-means segments, session trends, churn flags.</li>
-            <li><em>Tech:</em> Python, pandas, scikit-learn, Plotly.</li>
-            <li><em>Impact:</em> Drove targeted retention hypothesis tests.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://rate-forecasting-behavior.streamlit.app/">Rate Analysis and Spatial Behavior Forecasting</a></strong> (2025)<br>
-          Zone occupancy forecasting + anomaly detection.
-          <ul class="meta">
-            <li><em>Objectives:</em> Support staffing and cost planning.</li>
-            <li><em>Key Features:</em> Prophet forecasts, Bollinger bands, KPI exports.</li>
-            <li><em>Tech:</em> Streamlit, Prophet, pandas, seaborn.</li>
-            <li><em>Impact:</em> Proactive anomaly alerts; improved scheduling.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Geospatial & Disaster Resilience</h2>
-    <ul>
-      <li><strong><a href="https://ncdri-map.streamlit.app">NCDRI Resilience Index Map</a></strong> (2024)<br>
-          Region-level climate/disaster resilience scores.
-          <ul class="meta">
-            <li><em>Objectives:</em> Visualize multi-metric resilience.</li>
-            <li><em>Key Features:</em> Choropleths, drill-down, CSV export.</li>
-            <li><em>Tech:</em> geopandas, Streamlit, Plotly.</li>
-            <li><em>Impact:</em> Informed prioritization for adaptation spend.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Education & Evaluation Tools</h2>
-    <ul>
-      <li><strong><a href="https://demo-lecs.streamlit.app/">Demo Lecture Evaluator</a></strong> (2025)<br>
-          Rubric-based scoring with PDF output.
-          <ul class="meta">
-            <li><em>Objectives:</em> Standardize demo evaluations.</li>
-            <li><em>Key Features:</em> Dynamic rubrics, signatures, multi-page PDFs.</li>
-            <li><em>Tech:</em> Streamlit, fpdf/ReportLab, pandas.</li>
-            <li><em>Impact:</em> Faster, auditable reviews across panels.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://scatter-plot-app.streamlit.app">Correlation Explorer: Scatter &amp; Bubble Plots</a></strong> (2025)<br>
-          Visual correlation with labeled points and quizzes.
-          <ul class="meta">
-            <li><em>Objectives:</em> Teach correlation patterns interactively.</li>
-            <li><em>Key Features:</em> Bubble/scatter toggle, annotated clusters, quiz mode.</li>
-            <li><em>Tech:</em> Streamlit, Plotly, pandas.</li>
-            <li><em>Impact:</em> Improved data literacy in workshops.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>CRM & Workflow Automation</h2>
-    <ul>
-      <li><strong><a href="https://sla-routing.streamlit.app">CRM Ticket Routing System</a></strong> (2025)<br>
-          SLA-aware routing and escalations.
-          <ul class="meta">
-            <li><em>Objectives:</em> Reduce breach risk and response time.</li>
-            <li><em>Key Features:</em> Auto-assign, SLA timers, priority queues, audit logs.</li>
-            <li><em>Tech:</em> Power Apps, Power Automate, Dataverse/SQL.</li>
-            <li><em>Impact:</em> Fewer SLA breaches; clearer ownership.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Legal & Academic Process Automation</h2>
-    <ul>
-      <li><strong><a href="https://legal-validator.streamlit.app/">Decision Review Automation with Legal Template Validation</a></strong> (Jul 2023 – Feb 2024)<br>
-          FOIP alignment + citation/format checks.
-          <ul class="meta">
-            <li><em>Objectives:</em> Enforce consistency and compliance.</li>
-            <li><em>Key Features:</em> Regex rules, section completeness, plain-language hints.</li>
-            <li><em>Tech:</em> Python, regex, Streamlit.</li>
-            <li><em>Impact:</em> ~40% fewer post-review edits.</li>
-          </ul>
-      </li>
-      <li><strong><a href="https://faculty-scheduler.streamlit.app/">Business Process Improvement in Faculty Assignment</a></strong> (Sep 2022 – Aug 2024)<br>
-          See scheduling details above; policy compliance focus.
-          <ul class="meta">
-            <li><em>Objectives:</em> Meet unit caps and day/location rules.</li>
-            <li><em>Key Features:</em> Rule engine, conflict checks, summary dashboards.</li>
-            <li><em>Tech:</em> Python, pandas, Plotly.</li>
-            <li><em>Impact:</em> 100% compliance in pilot timetables.</li>
-          </ul>
-      </li>
-    </ul>
-
-    <h2>Project Table Summary</h2>
-    <table>
-      <thead>
-        <tr><th>Project</th><th>Role</th><th>Tech Stack</th><th>Outcome</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Cloud Data Engineering Simulator</td><td>Architect</td><td>Streamlit, DuckDB, DBT-style SQL, REST API</td><td>Mock pipeline with DAG, lineage, and DQ checks</td></tr>
-        <tr><td>Faculty Load Assignment System</td><td>Engineer</td><td>Python, pandas, Excel</td><td>Auto-assigned loads; eliminated conflicts</td></tr>
-        <tr><td>Digital Adoption Dashboard</td><td>Analyst</td><td>Streamlit, Plotly</td><td>Revealed feature gaps; boosted enablement</td></tr>
-        <tr><td>SHDI Dashboard</td><td>Analyst</td><td>pandas, seaborn</td><td>Regional SHDI comparisons & trends</td></tr>
-        <tr><td>Hospitality ETL + KPIs + Forecasts</td><td>Data Engineer</td><td>Python, SQLite, Plotly, Streamlit</td><td>Forecasts w/ intervals & remarks panel</td></tr>
-        <tr><td>Spectroscopy Workflow Optimization</td><td>Scientist/Engineer</td><td>Python, pandas, Streamlit</td><td>~40% throughput improvement</td></tr>
-        <tr><td>Open Polymer Property Prediction</td><td>ML Engineer</td><td>LightGBM, RDKit</td><td>Screened candidates; reduced lab trials</td></tr>
-        <tr><td>Demand-Supply RL System</td><td>RL Engineer</td><td>Stable-Baselines3, Python</td><td>Lifted fill-rate vs. LP baseline</td></tr>
-        <tr><td>Resume Parser + Formatter</td><td>Developer</td><td>Streamlit, python-docx</td><td>ATS-ready resumes in minutes</td></tr>
-        <tr><td>Semantic Search & RAG Engine</td><td>NLP Engineer</td><td>LangChain, FAISS</td><td>Source-grounded answers & previews</td></tr>
-        <tr><td>SecureHealth MySQL System</td><td>Architect</td><td>MySQL, AES, RBAC</td><td>Least-privilege access, audit trail</td></tr>
-        <tr><td>Ad Causal Inference Simulator</td><td>Researcher</td><td>Python, NetworkX</td><td>Bias/power insights under interference</td></tr>
-        <tr><td>Cam Car Strategy Simulation</td><td>Strategist</td><td>MS Office, Plotly</td><td>Scenario tradeoff visualization</td></tr>
-        <tr><td>NCDRI Dashboard</td><td>Scientist</td><td>Streamlit, geopandas</td><td>Resilience index drill-down</td></tr>
-        <tr><td>Demo Lecture Evaluator</td><td>UX Developer</td><td>Streamlit, fpdf</td><td>Standardized, signed PDFs</td></tr>
-        <tr><td>CRM Ticket Routing System</td><td>Designer</td><td>Power Apps, Automate</td><td>Faster assignment; fewer breaches</td></tr>
-        <tr><td>Decision Review Automation</td><td>Developer</td><td>Python, regex, FOIP templates</td><td>~40% fewer edit cycles</td></tr>
-        <tr><td>Business Process Improvement in Faculty Assignment</td><td>Analyst</td><td>Python, pandas, decision trees</td><td>Policy-compliant allocations</td></tr>
-        <tr><td>LTC Microsimulations</td><td>Health Data Scientist</td><td>Python, pandas</td><td>Budget/capacity planning support</td></tr>
-        <tr><td>Simulating Ad Auctions</td><td>Economics Analyst</td><td>Python, Plotly</td><td>Revenue vs. efficiency comparison</td></tr>
-        <tr><td>A/B Test with Network Effects</td><td>Experimental Designer</td><td>Python, NetworkX</td><td>Showed cluster design benefits</td></tr>
-        <tr><td>Spatial Movement Analysis</td><td>Analyst</td><td>Python, DBT, SQL</td><td>Heatmaps & peak flow insights</td></tr>
-        <tr><td>Threat Attribution GNN</td><td>Security Researcher</td><td>GNN, PyTorch Geometric</td><td>+35% attribution accuracy</td></tr>
-        <tr><td>Player Behavior Analytics</td><td>Game Data Analyst</td><td>Python, clustering, pandas</td><td>Targeted retention hypotheses</td></tr>
-        <tr><td>Rate Analysis & Spatial Behavior Forecasting</td><td>Forecaster</td><td>Streamlit, Prophet, pandas, seaborn</td><td>Anomaly flags; KPI exports</td></tr>
-        <tr><td>Correlation Explorer</td><td>Visualization Analyst</td><td>Streamlit, Plotly, pandas</td><td>Interactive correlation learning</td></tr>
-        <tr><td>Video Overlay Studio</td><td>Engineer</td><td>MoviePy, OpenCV, Streamlit</td><td>Branded MP4s in minutes</td></tr>
-        <tr><td>Beautify Filter App</td><td>Computer Vision Eng.</td><td>Python, OpenCV</td><td>Consistent portrait enhancements</td></tr>
-        <tr><td>MOV → MP4 Converter</td><td>Developer</td><td>ffmpeg, Python CLI</td><td>Standardized deliverables</td></tr>
-        <tr><td>MP3 → WAV Converter</td><td>Developer</td><td>pydub/ffmpeg</td><td>Normalized audio for ML/ASR</td></tr>
-      </tbody>
-    </table>
-    <!-- ======= END PORTFOLIO ======= -->
+    <!-- Keep your existing Projects HTML here (unchanged). -->
   </section>
 
   <!-- ===== Certifications Panel ===== -->
   <section id="panel-certs" class="tab-panel" role="tabpanel" aria-labelledby="tab-certs">
     <h2>Certifications</h2>
+
     <div id="status" class="status" hidden><span class="dot"></span><span class="msg"></span></div>
+
+    <!-- Search -->
+    <div class="searchbar">
+      <input id="cert-search" type="search" placeholder="Filter by title or issuer…" aria-label="Filter certifications" />
+      <button class="clear" id="clear-search" type="button">Clear</button>
+    </div>
+
+    <!-- Dynamic legend -->
+    <div id="legend" class="legend" aria-label="Certification clusters"></div>
+
+    <!-- Clustered output -->
     <div id="cert-output"></div>
 
     <h3>Badge Portfolios & Evidence</h3>
     <ul>
       <li><a href="https://www.credly.com/users/al-rey-villagracia.09a12ff4#badge-portfolio" target="_blank" rel="noopener noreferrer">Credly — Badge Portfolio</a></li>
+      <li><a href="https://www.credly.com/badges/aad41dd4-7d02-4629-afaf-d81c8802a5e2" target="_blank" rel="noopener noreferrer">Credly Badge</a></li>
+      <li><a href="https://www.credly.com/badges/45997d5b-95f5-4ce4-aa16-4af3fbbbd27c" target="_blank" rel="noopener noreferrer">Credly Badge</a></li>
+      <li><a href="https://www.credly.com/badges/22a1fc2a-04fe-4767-8a69-080730e3c819" target="_blank" rel="noopener noreferrer">Credly Badge</a></li>
       <li><a href="https://badges.wes.org/Evidence?i=287ba744-1800-45e1-b407-65a2e4f5244c&type=ca" target="_blank" rel="noopener noreferrer">WES — Evidence</a></li>
-      <li><a href="https://drive.google.com/file/d/1NegXjep1r3HGAhQK4KOc7_MypALQdCMQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Coursera Certificates (PDF)</a></li>
+      <li><a href="https://drive.google.com/file/d/1WUtWZotXT7r11-WNWQ1zGqrr38lvECVv/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Coursera Certificates (PDF)</a></li>
     </ul>
-    <p class="hint">This page verifies you have exactly <strong>52</strong> entries and clusters them using your PDF descriptions.</p>
+    <p class="hint">Clusters: Data Science & Analytics, Machine Learning & AI, <strong>Prompt Engineering & GenAI Apps</strong>, <strong>BI & Dashboards</strong>, <strong>Product & Project Management</strong>, <strong>Cloud Platforms</strong>, <strong>DevOps & Infrastructure</strong>, <strong>Big Data & Spark</strong>, Finance & Quantitative Analysis, Other / Domain‑Specific. Titles are alphabetized; issuers shown in parentheses.</p>
   </section>
 
   <div class="footer">© 2025 Al Rey Villagracia</div>
-
-  <!-- ===== EMBEDDED CSV (your uploaded CourseraCerts.csv) ===== -->
-  <script id="embedded-csv" type="text/plain">Company,Title,Cert Link,PDF Description
-Intuit ,Academy Bookkeeping,https://www.coursera.org/account/accomplishments/professional-cert/U4JLV7CZXFLX,"4 Courses
-Bookkeeping Basics
-Assets in Accounting
-Liabilities and Equity in Accounting
-Financial Statement Analysis
-"
-Microsoft,AI-900 - Microsoft Azure AI Fundamentals,https://learn.microsoft.com/en-us/users/alreyvillagracia-2850/credentials/36580fb613ed553a,"AI-900 - Microsoft Azure AI Fundamentals
-Prove your knowledge of common AI and machine learning workloads and how to implement them on Azure. Learn about computer vision, natural language processing, and conversational AI.
-"
-Automatic Data Processing, Inc. (ADP),ADP Data Analytics Bootcamp Certificate,https://www.coursera.org/account/accomplishments/certificate/8J32S3RWMZ8Z,"This course introduces learners to ADP products and provides a deeper understanding of ADP data. You will learn about ADP's reporting platform, data dictionaries used to find fields for use in reporting, and the data scripting language used on the ADP platform.
-"
-Unilever,Advanced Data Visualization – Plotly,https://www.coursera.org/account/accomplishments/certificate/6E3X32HIC3HD,"Learn advanced data visualization techniques using Plotly, including interactive charts, custom layouts, and real-world projects.
-"
-SAS,Advanced SQL for Data Science (Course),https://www.coursera.org/account/accomplishments/certificate/8W4TFCI38C0H,"This course covers both introductory and advanced SQL. Students use SQL to create Projects/Pipelines to import, clean, and manipulate data. Students use SQL to reason about and calculate cumulative change and rolling averages in time series data.
-"
-Microsoft,Applied Business Statistics with Excel (Project),https://www.coursera.org/account/accomplishments/certificate/S9OMI1HGMNIQ,"This guided project course uses case problems for practice in applying data analytical tools in Excel, using techniques including: Using INDEX-MATCH to retrieve data based on user inputs - joining data from different tables using XLOOKUP - Applying DATE/TIME functions to build table structures - Creating interactive charts with slicers - Dynamic dashboard and charts with named ranges - Generate summary statistics using Excel functions.
-"
-IBM,Applied Data Science Capstone,https://www.coursera.org/account/accomplishments/certificate/1J4A9RG48SFR,"This capstone project course is the final part of completing the IBM Data Science Professional Certificate. You will complete several tasks that simulate a real-life data science scenario and demonstrate the skills and knowledge gained throughout the 9 courses of the IBM Data Science Professional Certificate.
-"
-University of Alberta,Applied Machine Learning in Production,https://www.coursera.org/account/accomplishments/certificate/OS83BLC9ZLTK,"Understand the production lifecycle of machine learning applications and MLOps systems
-Explain the purpose and steps of ML life cycle phases: build, preproduction, and production
-Demonstrate the usage of popular technologies such as Docker, GitHub, & Kubernetes
-"
-Google,Applied ML for Python Developers (Basic),https://www.coursera.org/account/accomplishments/certificate/7M0T7K2KVT6Z,"Applied ML for Python Developers (Basic)
-As a beginner-level Python developer in machine learning, you might use TensorFlow to develop data pipeline for input models and build ML models that solve real-world problems. By developing and demonstrating your ML skills, this skill badge will help boost your career prospects and give you confidence that your skills are job-ready.
-"
-Scrimba,Build a Spotify Clone with React (Course),https://www.coursera.org/account/accomplishments/certificate/ELWP1Z3D6ITA,"Make a clone of Spotify with React in this Scrimba Course with Per Harald Borgen
-- Build UI with reusable React components
-- Use custom hooks and context to manage data flow
-- Integrate API to show songs by genre, top artists, trending songs and other key details
-"
-Packt,Build Machine Learning Systems for Algorithmic Trading,https://www.coursera.org/account/accomplishments/certificate/19D589VS4R7E,"In this course, you'll learn powerful skills for designing and configuring Machine Learning systems. Learn important skills such as how to select the correct model for your ML problem and the business objectives, test various models and detect and avoid bias, drift and overfitting and other pitfalls. Learn to deploy an ML model in the production environment.
-"
-Microsoft,CI/CD with GitHub Actions in JavaScript Projects (Project),https://www.coursera.org/account/accomplishments/certificate/14CMIN8E0P2D,"In this 1-hour long project-based course, you will learn how to automate your GitHub repository's packaging and continuous delivery (CD) with GitHub Actions as the automated system. You will be able to package your repository, upload it to GitHub releases be used in deployment to various targets across platforms.
-"
-University of Colorado Boulder,Cloud DevOps Course 1-CI/CD in AWS with YAML,https://www.coursera.org/account/accomplishments/certificate/BQESO9MB7YTW,"This course explores how to incorporate robust CI/CD pipelines to make your software generally deployable. Create infrastructure as code to integrate with automation in CICD pipelines, testing of code and generation of application deployment packages.
-"
-University of Colorado Boulder,Cloud DevOps Course 2-Scaling Applications with Kubernetes,https://www.coursera.org/account/accomplishments/certificate/NBWQ8G657QEM,"Kubernetes is the infrastructure for ML workloads and applications - in this course you will learn best practices for deploy applications in Kubernetes from the ground up
-"
-University of Toronto,Cloud Computing Concepts (Specialization),https://www.coursera.org/account/accomplishments/specialization/certificate/K9PVS0B40U8K,"Learn the basic concepts of Cloud Computing and learn how it can be helpful to your business. You will also learn how Cloud Computing can be implemented to your organization and the infrastructure it needs and challenges that comes with implementation on cloud
-"
-IBM,Cognitive Class: Applied Deep Learning,https://www.coursera.org/account/accomplishments/certificate/19D3T2R905TP,"Deeper knowledge in applied deep learning - Concepts in CNN features extraction
-"
-CVS Health,Creating a Professional Online Presence (Project),https://www.coursera.org/account/accomplishments/certificate/P6TQ3SRHY8I3,"In this project, you will create a public online presence that will help you to follow industry leaders, showcase your professional knowledge, and track the trends.
-"
-Google,Custom Model Deployment (Advanced),https://www.coursera.org/account/accomplishments/certificate/0RZ9KILAM9GX,"Design and build pipelines that transform data (including real-time operational data), and then deploy those pipelines to the cloud. This is done with a focus on using Google Cloud and its infra services.
-"
-IBM,Data Analysis with Python,https://coursera.org/share/017aec50700419a72d70560c55422438,"This course introduces learners to data analysis using Python. The course also covers some of the basic statistical techniques used in analysis tasks, and the application of Python to analysis procedures. It also covers how to use Python libraries like NumPy and Pandas for performing data analysis tasks.
-"
-IBM,Data Visualization with Python,https://coursera.org/share/e1c544de2c522ba1886d71b8c238db1c,"This course is intended to provide students with a broad overview of the methods and techniques used to visualize data. The material covered in the Visualizing Data course includes the representation of statistical graphics, mapping of information, and the creation of effective informational projects using Python libraries like Matplotlib, Seaborn, and Plotly.
-"
-Vanderbilt University,Design Prompt Engineering with Generative AI (Specialization),https://www.coursera.org/account/accomplishments/specialization/certificate/92X119I8C32S,"Developed Prompt Engineering Skills Prompt engineering is an essential skill for those working with Large Language Models. This course helped developed strong skills in the topics surrounding prompt engineering and modern LLMs.
-"
-Vanderbilt University,Design Prompt Engineering with Generative AI (Specialization),https://www.coursera.org/account/accomplishments/specialization/certificate/DPY345KQU8Z3,"Covered advanced topics in prompt engineering and modern LLMs: Prompting using natural language and chain-of-thought prompting. Advanced topics like many-shot prompting and the use of automatic prompt optimization techniques
-"
-Vanderbilt University,Design Prompt Engineering with Generative AI (Specialization),https://www.coursera.org/account/accomplishments/specialization/certificate/J6IOEP6U0AQC,"Course focused on applying prompt engineering in real-world applications. Topics covered the use of LLMs in applications like chatbots, virtual assistants, writing and analysis. Advanced topics included the use of vector databases, vector stores and the vector-augmented generation (RAG) to ground the responses in enterprise and specific customer documentation.
-"
-Google,Develop an End-to-End AI Solution (Advanced),https://www.coursera.org/account/accomplishments/certificate/M4G9PFAY60PM,"An advanced-level study in software engineering concepts around using services in the cloud infrastructure to build the end-to-end AI solutions. The core focus includes using cloud storage and the topics in developing data pipelines, using compute-based services, and provisioning of services using infrastructure-as-code.
-"
-Google,Develop GenAI Apps with Gemini and Streamlit (Intermediate),https://www.coursera.org/account/accomplishments/certificate/9D6GQNAXG0EK,"Develop GenAI Apps with Gemini and Streamlit (Intermediate)
-Ran experimentations on building GenAI apps using Gemini APIs and Streamlit framework - Prompt Engineering & RAG
-"
-Packt,Develop Microsoft Azure Infrastructure Solutions (AZ-305),https://www.coursera.org/account/accomplishments/certificate/1W943L3OU9M6,"Packt practice exam series covering all AZ-305 core topics with ability to take test upto 4 times - Domain 1: Design identity, governance and monitoring solutions Domain 2: Design data storage solutions Domain 3: Design business continuity solutions Domain 4: Design infrastructure solutions - 80 questions in total
-"
-Microsoft,Develop Software with Python (Coursera Guided Project),https://www.coursera.org/account/accomplishments/certificate/KGT7TJDE52AV,"In this 1-hour long project-based course, you will learn to build a python program that extracts information using web scraping with the libraries requests and BeautifulSoup. You will then learn to pass the data into the Pandas data frame. Streamlit frontend using CSS and HTML for styling - a basic app in Streamlit
-"
-Meta,Front-End Developer Professional Certificate,https://www.coursera.org/account/accomplishments/professional-cert/EXWBCP4RN54G,"1) Introduction to Front-End Development 2) Programming with JavaScript 3) Version Control 4) HTML and CSS in depth 5) React Basics 6) Advanced React 7) Principles of UI/UX Design 8) Final Certification Exam
-"
-AWS,Fundamentals of Application Development,https://www.coursera.org/account/accomplishments/certificate/81WC55VE3V6H,"AWS cloud-based applications on event-driven architecture
-"
-Board Infinity,Fundamentals of Data Science,https://www.coursera.org/account/accomplishments/certificate/2L3OWKDGDKGA,"The course provides the fundamentals of Data Science and the usage of methods, processes, algorithms to extract knowledge and insights from data, in various forms, both structured and unstructured.
-"
-University of Pennsylvania,Fundamentals of Scalable Data Science,https://www.coursera.org/account/accomplishments/certificate/2N2W39BV2NG3,"Fundamental elements of data science, data cleaning and learning algorithms. Topics on recommendation systems, prediction, application-based topics such as learning how to implement these techniques with the PySpark framework for big data, using MongoDB, Spark on the Cloud
-"
-Duke University,Image and Video Processing: From Mars to Hollywood with a Stop at the Hospital,https://www.coursera.org/account/accomplishments/certificate/9135QDT0E0P3,"This course is all about audio and image processing applications. You will learn to interpret and use functions: FFTs, Image filtering and other related content on digital and image processing concepts using Python libraries
-"
-IBM,IBM Data Analyst Professional Certificate,https://www.coursera.org/account/accomplishments/professional-cert/9TKZLE1UE4UC,"Modules completed and was able to pass all assessment for Data Analyst track which includes topics in Introduction to Data Analytics, Excel Basics for Data Analysis, Data Visualization and Dashboards with Excel and Cognos, Python for Data Science, AI & Development, Python Project for Data Science, Databases and SQL for Data Science with Python, Data Visualization with Python, Data Analysis with Python, IBM Data Analyst Capstone Project
-"
-IBM,IBM Data Science Professional Certificate,https://coursera.org/share/a65778a75957f8b0ebc667b190790d68,"IBM Data Science professional certificate covers courses in tools for data science, SQL, Python for Data Science and Databases, data science methodology, data analysis in Python, data visualization using Plotly and effective visualizations, Machine Learning using Sci-kit Learn frameworks
-"
-IBM,IBM Generative AI Data Scientist (Specialization),https://www.coursera.org/account/accomplishments/specialization/NWDTA0J2Y90M,"Covers the primary courses for using the generative AI in the enterprise data science contexts - This covers the project cycle in the usage of the general large language models (LLMs), along with training methods and variations. Also covered are methods for tuning LLMs, model training, and inference with moderate workloads on GPUs and cloud resources in the enterprise context.
-"
-Google,Implement CI/CD with Jenkins in Google Cloud,https://www.coursera.org/account/accomplishments/certificate/X8TEXSBG7F6U,"In this 1-hour long project-based course, you will learn how to implement CI/CD using Jenkins in Google Cloud Platform.
-"
-SAP,Introduction to SAP,https://www.coursera.org/account/accomplishments/certificate/K51475594Y2V,"SAP introduction that covers the general SAP infra applications that includes practicing & using products in SAP S/4HANA, Business Warehouse, Enterprise Resource Planning including SAP R/3 - Planning and Management Systems from SAP
-"
-Google,Introduction to Vertex AI Studio (Gen AI),https://www.coursera.org/account/accomplishments/certificate/ZJ1ZVQWJMFZG,"In this course, you explore content generation using generative AI with topics such as automation and deployment of generative AI models, including model tuning with images, text, and other content. The course also cover fundamentals of Transformer architecture used in GenAI
-"
-Meta,Meta Database Engineer Professional Certificate,https://www.coursera.org/account/accomplishments/professional-cert/A6741YF6PG1G,"Graduated from 'Meta' Database Engineer Professional Certificate Track
-"
-IBM,Python for Data Science, AI & Development,https://coursera.org/share/f221b23046ccebd7e904f2e4c771d19d,"Data science and programming languages: Python basics, data analysis, visualization, pandas, Matplotlib
-"
-L&T EduTech,Python Programming (Skill Course),https://www.coursera.org/account/accomplishments/certificate/426GTT1LCR6N,"Learned data types; operations; functions; flow control; files; strings; lists, tuples, dictionaries; custom functions; exception handling; python comprehension
-"
-Salesforce, Pathstream,Salesforce Sales Operations,https://www.coursera.org/account/accomplishments/certificate/1AH7L0MAWBQN,"This course introduces students to the fundamentals of sales operations, including customer relationship management (CRM), sales pipeline management, forecasting, performance metrics, and sales analytics. Students will learn the concepts behind effective sales operations, as well as the practical skills necessary to succeed in the field.
-"
-Microsoft,Server Virtualization with Windows Server Hyper-V and System Center,https://www.coursera.org/account/accomplishments/certificate/07EM982BOJPA,"This course is to provide you with capabilities for virtualization in Microsoft HyperV and System Center tool, including capabilities to scale compute capacity for running systems in the 'cloud'
-"
-Google,Set Up an App Dev Environment on Google Cloud (Basic),https://www.coursera.org/account/accomplishments/certificate/SPMO2M37VGSI,"Set Up an App Dev Environment on Google Cloud (Basic)
-This credential form Google is a learning to set up dev environment on Google cloud. Covered topics on how attackers exploit vulnerabilities for many basic security attack categories and also covers the basics of installing packages for building applications in cloud machines
-"
-IBM,SQL for Data Science with RDBMS,https://www.coursera.org/account/accomplishments/certificate/0GGR77Y30G1J,"Structured Query Language online course with over 19 hours of content. This course comprises the following modules:
-Module 1: Relational database management basics
-Module 2: Basic SQL
-Module 3: SQL joins
-Module 4: Views, transactions, and limiting data
-Module 5: Advanced SQL -- Subqueries, temp tables, and window func
-"
-Microsoft,Statistics for Data Science with Excel (Project),https://www.coursera.org/account/accomplishments/certificate/9JLNQGFLDRQZ,"In this 1-hour long project-based course, you will learn the types of each variable (Discreet or Random), how to run the z-test and t-tests using Excel, how to interpret the results of t-tests and z-tests, use of t-test and z-test in practical scenarios, use of VLOOKUP() and an alternative to VLOOKUP function
-"
-Intel,Tensorflow Degree - Computer Vision (Augmentor),https://www.coursera.org/account/accomplishments/specialization/certificate/UOV0KQCBR94P,"Learned the basic concepts of neural networks and deep learning, how to build models with TensorFlow using collab notebooks and build custom networks using the Keras API. Includes optimizing hyperparameters and the deployment of the learned model
-"
-University of Alberta,The Business of AI: The Impact on Careers, Business, and Society,https://www.coursera.org/account/accomplishments/certificate/AOVCXATU2Z8U,"Current landscape of artificial intelligence (AI) and its impacts in business, education, healthcare, and governance. AI myths and realities are examined with common pitfalls.
-"
-University of California, Davis,The Strategy of Content Marketing,https://www.coursera.org/account/accomplishments/certificate/50GNIE2BD86U,"This course is an introduction to successful real-world content marketing strategies involving paid media for conquest and branding on Operator side (targeting LinkedIn, reddit Ads, and other paid listings - with writing content and course materials as part of his future PHD research outputs as on topics like knowledge retrieval, and aggregated analytics for explainability systems
-"
-University of Pennsylvania,Understanding Your Data: Gen AI Discrete Example with NLP,https://www.coursera.org/account/accomplishments/certificate/1ZQ8XZOABQE7,"Design a product solution that leverages AI/ML for the glass industry. Based on the input information and industry requirements, you will specify key capabilities and define integration requirements in order to increase profitability and competitiveness for a real-life scenario.
-"
-Google,Use APIs to Build Apps (Intermediate),https://www.coursera.org/account/accomplishments/certificate/FXK7KOM04Z8E,"Use APIs to Build Apps (Intermediate)
-As an intermediate-level software developer, you might use APIs as part of your app development process, integrating third-party services and building applications that work with data stored internally and externally to your app. By developing and demonstrating your API development skills, this skill badge will help boost your career prospects and give you confidence that your skills are job-ready.
-"
-IBM,Using Python with Excel,https://www.coursera.org/account/accomplishments/certificate/G29N5Z0SL7U4,"How to use type casts between excel and python many of the mechanics working with dataframes and how to use libraries to create charts that can be shared and embedded as in presentations
-"
-University of Michigan,Web Applications for Everybody Specialization,https://www.coursera.org/account/accomplishments/specialization/certificate/AO5OSHHNB9HG,"This specialization file hence covers the topics on index.html components; CSS and dynamic CSS, URL routing, and fundamentals of dynamic program generation of pages that includes HTML template expansion. Further course also covers building REST APIs as it processes request from web/mobile/desktop sources
-"
-Starweaver,Working with Data Visualization in Python Library Plotly,https://www.coursera.org/account/accomplishments/certificate/CQ3H508W02OQ,"This course is intended to teach people who use excel as the main tool for reporting and statistics - but transitioning into tools that are needed to be a successful data analyst. Pandas and plotting libraries using plotly & plotly express are used to build visualization under custom style and analyses
-"
-Microsoft,WS-050: Migrating Application Servers to Azure,https://www.coursera.org/account/accomplishments/certificate/7T8NA1XT6EP2,"In this course, part of Microsoft Azure, you will learn how to migrate your application servers to Azure by using Azure Migrate application. By the end of this course, you'll be able to:  Provision servers and create networks using Azure Resource Manager; Select an appropriate VM size and location; Configure Availability Sets and Availability Zones; Add data disks and NICs, and configure network security groups to protect the VMs
-"
-Google,Create a Virtual Machine (Basic),https://www.coursera.org/account/accomplishments/certificate/6N0BSU9T2UQ4,"Create a Virtual Machine (Basic)
-Cloud VMs are the compute for basic and advanced workloads in the absence of server-provisioning - Tools such as CLI tools for provisioning, secured OS pipelines using containers the essential steps in installation & this course shows a to create the level of knowledge proving in cloud computing contexts
-"
-Packt,CPA – Financial Accounting & Financial Statements (Exam simulator),https://www.coursera.org/account/accomplishments/certificate/68T0RGVP1N0H,"Accounting and financial statements & inventory /standard costing fundamentals -Casting accounts with balance sheets - How to clear account receivables -The importance of aging account receivables"
-"
-University of Alberta,Machine Learning: Using Scikit-Learn for Type 2 Diabetes Prediction,https://www.coursera.org/account/accomplishments/certificate/4XG6VTU4CU0I,"This course guided through the process of creating a predictive model for type 2 diabetes using Scikit-Learn, a library optimized for building machine learning models in Python (ML technique to handle unbalanced classes and improve the performance of a model.)
-"
-SAS,Data Wrangling, Analysis, and AB Testing with R,https://www.coursera.org/account/accomplishments/certificate/BAQBT7J8ZK1D,"In this guided project, a code-along and practice activities are provided to perform data wrangling tasks using R programming language (tidyverse - gather, spread, separate, unite, remove, mutate, summarize) and run A/B tests used in industry to make data-driven organizations
-"
-Microsoft,Writing Windows PowerShell Scripts (Project),https://www.coursera.org/account/accomplishments/certificate/D8QSWYPBR6GQ,"In this 1-hour long project-based course, you will be able to write PowerShell scripts to automate everyday system administration tasks
-"
-University of Alberta,Introduction to Intersectionality,https://www.coursera.org/account/accomplishments/certificate/UN80IAGV25S4,"This course gives proper insight into representation issues in educational & workplace settings
-"
-University of Toronto,Proposal Writing,https://www.coursera.org/account/accomplishments/certificate/19BE8HSU2T07,"In this course, students will learn how to write a proposal, which is a document that will convince its readers of an argument.
-"
-University of Pennsylvania,Gen AI,https://www.coursera.org/account/accomplishments/certificate/0XD7G2PJKTC5,"Generative AI course that covers training methods, pitfalls, strategies for training including using datasets generation with generative AI.
-"
-IBM,Applied Deep Learning: Model Tuning,https://www.coursera.org/account/accomplishments/certificate/72UM3TOHOIJZ,"This course is intended to provide students with applied deep learning useful to real world applications - usage of convolution and other techniques and prepare the students with: fundamental techniques in gradient descent, learning rates, momentum, batch normalization, and loss function and evaluation metrics
-"
-Microsoft,Project Management Principles and Practices,https://www.coursera.org/account/accomplishments/certificate/2S2UL6R1EKHN,"A comprehensive course that covers the principles and practices of project management. The course focuses on the practical application of project management processes, tools, and techniques to achieve project success. Topics covered include project initiation, planning, execution, monitoring, and control.
-"
-Microsoft,AI applications - business driver & application,,"A business workshop course that highlights frontline use cases for using GenAI for operations and analytics, customer service and marketing - particularly on developer tools leverages the internal and third-party strategies & roadmaps for integrating capabilities to create benefits - new operating models - especially in the government
-"
-IBM,Exploratory Data Analysis for Machine Learning,https://www.coursera.org/account/accomplishments/certificate/VLNOXRLDIN8X,"Graduated from this course enables students to learn tools and techniques to perform EDA
-"
-Microsoft,Machine Learning Math (Course),https://www.coursera.org/account/accomplishments/certificate/OCC7RKO4UI3N,"This course prepared student for entry into machine learning with the math foundations suitable to be a data scientist - math foundations for ml - linear algebra, calculus, probability and statistics and how these foundational knowledge are tied to each other in understanding the behavior of algorithms and functions
-"
-IBM,Advanced Data Science Capstone,https://www.coursera.org/account/accomplishments/certificate/F3GLKJMASABK,"The course further nails how the data science project cycle goes from problems definition to its conclusion and answers - students get acquainted to the skills equivalent to a project manager/analyst/business leader as it distills and aim to be hyper-focused to product's success in particular on requirements in using the best ML solution possible
-"
-University of Alberta,Experience Marketing Strategy,https://www.coursera.org/account/accomplishments/certificate/P5IL1M34H9NU,"This course is an introduction to the topic of marketing strategy, and it will be a good fit for you if you are interested in the field of marketing or in learning more about the marketing profession.
-"
-IBM,Data Processing and Feature Engineering,https://www.coursera.org/account/accomplishments/certificate/6PR6POAJ0QOW,"The course provides knowledge in data processing techniques in data engineering - the focus is how to processed, cleaned and prepared for training and machine learning for delivering the best results for data - the core focus is the feature selection technique / basic techniques of imputation / and how it integrates in scikit learn / hands-on with pandas
-"
-University of Alberta,Adaptive Expertise,https://www.coursera.org/account/accomplishments/certificate/0YJUK2VHX7TP,"This course provides an overview of the core concepts of adaptive expertise, its value and role. In addition, the course takes learners through how adaptive expertise can be developed, with tools and frameworks that can be used by learners , and educators in the classroom
-"
-IBM,Machine Learning with Python,https://www.coursera.org/account/accomplishments/certificate/6M0OIA5Q0Q0N,"The course focuses on machine learning specifically in the context of scikit learn - pick ML algorithms and analyse the proper methods for training models and select training parameters with tuning them - automatic pipeline and model search for hyper parameter - introduction to deep learning
-"
-IBM,Applied Machine Learning,https://www.coursera.org/account/accomplishments/certificate/9M5TRWM9H3AN,"ML aspects the used model training and target selection - evaluate learned models and use them in real products including ML system pipelines, how to deployed and version control ML models
-"
-IBM,Supervised Learning Regression,https://www.coursera.org/account/accomplishments/certificate/2PLWNQNS6ZRD,"This course focus on regression - the method used to analyze the relationships between dependent and independent variables that are continuous
-"
-Microsoft,Introduction to Cloud Computing,https://www.coursera.org/account/accomplishments/certificate/D5KM8STO54SC,"Learn how to build cloud computing systems - covering the foundations to design interactions between services, workflows mapping to business processes and learn to deploy workloads with increasing scaling & fixed costs by having unit economics to the product workflow
-"
-IBM,ML - Model selection & overfitting,https://www.coursera.org/account/accomplishments/certificate/3G5BVVPKPJ11,"The focus of this specific course was to identify and avoid occurrence of major problem in ML - the overfitting problem which the training model have fit to noise instead of significant signal present in any data - strategies for this includes: using more data, restricting the model's complexity, model averaging, fine-tuning regularization parameters, and weight penalty
-"
-IBM,Applied Data Science with Python,https://www.coursera.org/account/accomplishments/certificate/1KPW9D6ECL1V,"This course introduces the data science workflow with hands-on skills to prepare data for machine learning tasks with python in particular using jupyter notebooks and scikitlearn and matplotlib libraries
-"
-Google,Prompt Design in Vertex AI,https://www.coursera.org/account/accomplishments/certificate/B0HSHJ09M5WX,"Google cloud industry application of LLMs with Vertex AI for complex real-world processes and systems
-"
-IBM,Unsupervised Learning,https://www.coursera.org/account/accomplishments/certificate/YWZAMN0RNIHG,"This course covers the unsupervised learning techniques, such as clustering and dimensionality reduction, to analyze large amounts of data without labeled responses - it includes kmeans, hierarchical clustering, apriori, PCA and t-SNE
-"
-IBM,Deep Learning,https://www.coursera.org/account/accomplishments/certificate/FSGM6DDHF7ZV,"This learning coverage is specific with the foundations backend training engines like Pytorch and Tensorflow and foundations of deep learning through Keras - Keras codes ran with Pytorch and tensroflow engines in colab notebooks
-"
-IBM,Scalable Machine Learning on Big Data using Apache Spark,https://www.coursera.org/account/accomplishments/certificate/AZPTE6GFRNY7,"This course covers ML algorithms such as regression, classification, and clustering using Apache Spark MLlib. Additionally, it includes the techniques to handle the demands of large-scale data processing, including techniques around streaming and batch in Apache Spark.
-"
-IBM,Time Series Analysis - Model search - GARCH,https://www.coursera.org/account/accomplishments/certificate/8RHWB7E8X5L4,"This course covers the theory and best practices of analyzing time series data. It includes how to conduct time series analysis to explore the data characteristics and select the appropriate model which best supports the characterization of stochastic process. We also covered useful ways in validating the theories and data generation processes
-"
-IBM,Hyperparameter Tuning and Regularization for model improvement,https://www.coursera.org/account/accomplishments/certificate/QWHUQOOKWUFQ,"Learned how to use regularization techniques and hyperparameter tuning to improve model performance by preventing overfitting
-"
-IBM,Feature Engineering and Model Evaluation,https://www.coursera.org/account/accomplishments/certificate/17P3PNEE9ZBC,"Engineered new features using techniques like imputation and one-hot encoding. Used feature selection techniques to identify the most important features. Built various models while learning how to reduce the bias and variance tradeoff. Evaluated models using various performance metrics. Exotic patterns in data were captured by using the advanced techniques covered in the course."
-"
-IBM,Deep Learning and Tensorflow,https://www.coursera.org/account/accomplishments/certificate/FC3C80Y1T5BR,"Collections of concepts & labs in deep learning through working with libraries that includes Pytorch and Tensorflow including methods in proper training methods (in generalization) through regularizations
-"
-IBM,ROC Curves and AUC,https://www.coursera.org/account/accomplishments/certificate/OV266EU5L44X,"ROC curves are powerful tools for evaluating the performance of classification models. They provide a visual representation of the trade-off between the true positive rate and false positive rate across different classification thresholds
-"
-IBM,Large Language Models: Application through the API,https://www.coursera.org/account/accomplishments/certificate/75H9FXNU1J66,"The course covered using the API so that developers can harness generative AI to develop intelligent interactions in interfaces - RAG via industry APIs
-"
-IBM,Introduction to Data Engineering,https://www.coursera.org/account/accomplishments/certificate/BVGYUZ5XAIPV,"Modules in Intro to data engineering are used to help develop in solving data problems in the context of transforms and data modeling
-"
-IBM,Data Analysis on Apple Search Ads using SQL and Excel,https://www.coursera.org/account/accomplishments/certificate/0ZT7YZ85B1YS,"An understanding of how to apply SQL and Excel to analyze data in Apple Search Ads. The course covers using SQL to query and extract data from databases and using Excel to analyze and visualize data. The course also covers the basics of data analysis and statistical techniques in the context of ads data in Apple Search.
-"
-Intuit ,Quickbooks & Bookkeeping Exam,https://www.coursera.org/account/accomplishments/certificate/GV9PDYIY00Q2,"QuickBooks - Topics in Accounting that includes: balancing subsidiary ledgers; markup costs, cost center accounting topics
-"
-University of Alberta,Responsible Innovation: Ethics and Safety of Tech,https://www.coursera.org/account/accomplishments/certificate/RBVD9E6L1S0B,"This course is organized into three units. Unit 1 covers the fundamentals of Responsible Innovation. Units 2 and 3 explore Ethical and Safety issues in depth, respectively. By the end of this course, we will equip learners with technical and non-technical tools to prevent, manage, and mitigate risk and harm.
-"
-SAS,Random Forest Algorithm and the Relative Feature Importance,https://www.coursera.org/account/accomplishments/certificate/1T5AN9YFS2VM,"This course covered the basic concept of random forest and how it differs from a decision tree, logit and other simple models. It also covers how random forest works and the process of building a model.
-"
-Google,Flutter Flow (Basic),https://www.coursera.org/account/accomplishments/certificate/5JVUI0RJY9Q9,"Flutter Flow (Basic)
-Mobile and Web App development starter course for Flutter Flow - Concepts in using it to bootstrap mobile and web apps.
-"
-University of Alberta,Successful Presentation,https://www.coursera.org/account/accomplishments/certificate/9WUA8RSYJ55C,"This course is an introduction to professional presentation skills you can apply in any field. Through a series of modules, you will learn how to give an effective presentation to strengthen your connections with audience.
-"
-IBM,Build a Data Pipeline with Airflow,https://www.coursera.org/account/accomplishments/certificate/6MYYK10RN6MZ,"Airflow is the core component for building pipelines to ingest and serve data to downstream applications - DAG-based workflows - Concepts & labs
-"
-University of Alberta,Machine Learning Algorithms: Supervised,https://www.coursera.org/account/accomplishments/certificate/ZG9WD21TFU2W,"This course is an introduction to supervised machine learning algorithms, including linear regression, logistic regression, decision trees, and ensemble methods. It also covers the basics of evaluating machine learning models.
-"
-University of Alberta,Machine Learning (Supervised and Unsupervised),https://www.coursera.org/account/accomplishments/certificate/DCEJ8O8ASWHN,"This course is an overview of machine learning, including supervised and unsupervised learning. It also covers the basics of evaluating machine learning models.
-"
-Google,APIs for AI – Basic,https://www.coursera.org/account/accomplishments/certificate/3V5E1G0W3Z71,"APIs for AI – Basic
-The course demonstrates how to use APIs to build and deploy AI applications, including OpenAI APIs
-"
-  </script>
-  <!-- ===== END EMBEDDED CSV ===== -->
 
   <script>
     /* ---------- Tabs ---------- */
@@ -699,7 +174,12 @@ The course demonstrates how to use APIs to build and deploy AI applications, inc
     const initial = (location.hash || '#portfolio').replace('#', '');
     if (['portfolio','certs'].includes(initial)) activateTab(initial);
 
-    /* ---------- CSV parsing ---------- */
+    /* ---------- CSV fetch & parse ---------- */
+    async function loadCSV(path) {
+      const res = await fetch(path, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to load ' + path + ' (' + res.status + ')');
+      return await res.text();
+    }
     function parseCSV(text) {
       const rows = [];
       let i = 0, cur = '', inQuotes = false, row = [];
@@ -712,26 +192,20 @@ The course demonstrates how to use APIs to build and deploy AI applications, inc
           row.push(cur.trim()); cur = '';
         } else if ((c === '\n' || c === '\r') && !inQuotes) {
           if (cur.length || row.length) { row.push(cur.trim()); rows.push(row); row = []; cur = ''; }
-          if (c === '\r' && text[i+1] === '\n') i++; // handle CRLF
-        } else {
-          cur += c;
-        }
+          if (c === '\r' && text[i+1] === '\n') i++; // CRLF
+        } else { cur += c; }
         i++;
       }
       if (cur.length || row.length) { row.push(cur.trim()); rows.push(row); }
       return rows.filter(r => r.length && r.some(x => x !== ''));
     }
-
     function normalizeHeaders(hdrs) {
       return hdrs.map(h => (h || '').toString().trim().toLowerCase().replace(/\s+/g,' '));
     }
-
     function findCols(headers) {
       const h = normalizeHeaders(headers);
       const col = (regexArr) => {
-        for (let idx=0; idx<h.length; idx++) {
-          if (regexArr.some(r => r.test(h[idx]))) return idx;
-        }
+        for (let idx=0; idx<h.length; idx++) if (regexArr.some(r => r.test(h[idx]))) return idx;
         return -1;
       };
       return {
@@ -742,7 +216,6 @@ The course demonstrates how to use APIs to build and deploy AI applications, inc
         category: col([/category|cluster|domain|track|group/i])
       };
     }
-
     function rowsToItems(rows) {
       if (!rows.length) return [];
       const headers = rows[0];
@@ -763,33 +236,63 @@ The course demonstrates how to use APIs to build and deploy AI applications, inc
       return items;
     }
 
-    /* ---------- Category logic uses TITLE + DESCRIPTION ---------- */
+    /* ---------- Cluster logic ---------- */
     const ORDERED_CLUSTERS = [
       'Data Science & Analytics',
       'Machine Learning & AI',
-      'Business Analytics & BI',
-      'Cloud & Big Data',
+      'Prompt Engineering & GenAI Apps',
+      'BI & Dashboards',
+      'Product & Project Management',
+      'Cloud Platforms',
+      'DevOps & Infrastructure',
+      'Big Data & Spark',
       'Finance & Quantitative Analysis',
       'Other / Domain-Specific'
     ];
+    function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
 
     function normalizeCategory(cat, title, description) {
       const t = (title || '').toLowerCase();
       const d = (description || '').toLowerCase();
+      const hay = (t + ' ' + d).replace(/\s+/g,' ');
       const c = (cat || '').trim();
-      if (c) return c; // if CSV has a category, respect it
+      if (c) return c;
 
-      const hay = t + ' ' + d;
       const has = (arr) => arr.some(k => hay.includes(k));
 
-      if (has(['power bi','business intelligence','tableau','looker','dashboard','project management','pmp','scrum','kanban','agile','sales operations']))
-        return 'Business Analytics & BI';
-      if (has(['machine learning','deep learning','neural','ai ','artificial intelligence','generative','gpt','nlp','transformer','pytorch','keras','vertex ai','gemini','llm','prompt']))
+      // Prompt & GenAI Apps
+      if (has(['prompt','vertex ai','gemini','llm','chatbot','rag','generative ai','gpt']))
+        return 'Prompt Engineering & GenAI Apps';
+
+      // ML & AI (general)
+      if (has(['machine learning','deep learning','neural','artificial intelligence','nlp','transformer','pytorch','keras','tensorflow','scikit-learn','auc','roc','unsupervised','supervised']))
         return 'Machine Learning & AI';
-      if (has(['sql','python','r ','data analysis','data analyst','statistics','pandas','excel','data science','analytics','ab testing','a/b testing','visualization','plotly','powerquery']))
+
+      // Data Science & Analytics
+      if (has(['data analysis','data analyst','statistics','pandas','excel','visualization','plotly','ab testing','a/b testing','powerquery','rdbms','sql','feature engineering']))
         return 'Data Science & Analytics';
-      if (has(['azure','aws','gcp','cloud','big data','kubernetes','docker','devops','spark','mlops','ci/cd','jenkins','hyper-v','virtual machine','infrastructure']))
-        return 'Cloud & Big Data';
+
+      // BI & Dashboards
+      if (has(['power bi','business intelligence','tableau','looker','dashboard','excel dashboard']))
+        return 'BI & Dashboards';
+
+      // Product & Project Management
+      if (has(['project management','pmp','scrum','kanban','agile','content marketing','sales operations','proposal']))
+        return 'Product & Project Management';
+
+      // Cloud Platforms
+      if (has(['azure','aws','gcp','google cloud','cloud computing','virtual machine','vm','hyper-v','vertex ai studio']))
+        return 'Cloud Platforms';
+
+      // DevOps & Infrastructure
+      if (has(['kubernetes','docker','devops','jenkins','ci/cd','cicd','github actions','infrastructure as code','iac','scaling applications']))
+        return 'DevOps & Infrastructure';
+
+      // Big Data & Spark
+      if (has(['spark','pyspark','big data','mllib']))
+        return 'Big Data & Spark';
+
+      // Finance
       if (has(['finance','accounting','financial','portfolio','budget','bookkeep','quickbooks','cpa','statement']))
         return 'Finance & Quantitative Analysis';
 
@@ -803,7 +306,6 @@ The course demonstrates how to use APIs to build and deploy AI applications, inc
         if (!map.has(key)) map.set(key, []);
         map.get(key).push(it);
       });
-      // Sort within each cluster by Title
       for (const [k, arr] of map.entries()) {
         arr.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
       }
@@ -812,44 +314,80 @@ The course demonstrates how to use APIs to build and deploy AI applications, inc
       return { map, ordered: [...known, ...extras] };
     }
 
-    function setStatus(ok, count) {
+    /* ---------- Rendering ---------- */
+    let ALL_ITEMS = [];  // raw items from CSV
+    const EXPECTED_COUNT = 52;
+
+    function setStatus(loadedCount, shownCount, errorMsg='') {
       const box = document.getElementById('status');
       const msg = box.querySelector('.msg');
       box.hidden = false;
-      if (ok) {
-        box.classList.remove('error');
-        msg.textContent = `Loaded ${count} certifications (✓ all 52 present)`;
-      } else {
-        box.classList.add('error');
-        msg.textContent = `Loaded ${count} certifications — expected 52. Please check for missing/extra rows.`;
+
+      const loadedOK = loadedCount === EXPECTED_COUNT;
+      box.classList.toggle('error', !loadedOK || !!errorMsg);
+
+      if (errorMsg) {
+        msg.textContent = errorMsg;
+        return;
       }
+
+      const base = loadedOK
+        ? `Loaded ${loadedCount} certifications (✓ all ${EXPECTED_COUNT} present)`
+        : `Loaded ${loadedCount} certifications — expected ${EXPECTED_COUNT}`;
+
+      msg.textContent = (shownCount !== loadedCount)
+        ? `${base} · Showing ${shownCount} after filter`
+        : base;
+    }
+
+    function renderLegend(ordered, map) {
+      const legend = document.getElementById('legend');
+      legend.innerHTML = '';
+      const total = Array.from(map.values()).reduce((n, arr) => n + arr.length, 0);
+
+      // All chip
+      const allChip = document.createElement('button');
+      allChip.className = 'chip all';
+      allChip.innerHTML = `<span>All</span><span class="count">${total}</span>`;
+      allChip.onclick = () => window.scrollTo({ top: document.getElementById('cert-output').offsetTop - 20, behavior: 'smooth' });
+      legend.appendChild(allChip);
+
+      // Per-cluster chips
+      ordered.forEach(cluster => {
+        const count = (map.get(cluster) || []).length;
+        const chip = document.createElement('button');
+        chip.className = 'chip';
+        chip.innerHTML = `<span>${cluster}</span><span class="count">${count}</span>`;
+        chip.onclick = () => {
+          const id = 'cluster-' + slugify(cluster);
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        };
+        legend.appendChild(chip);
+      });
     }
 
     function renderCerts(items) {
       const out = document.getElementById('cert-output');
       out.innerHTML = '';
-      const EXPECTED = 52;
-      setStatus(items.length === EXPECTED, items.length);
-
-      if (!items.length) {
-        out.innerHTML = '<p>No certifications found.</p>';
-        return;
-      }
 
       const { map, ordered } = groupAlphabetize(items);
+      renderLegend(ordered, map);
+
       ordered.forEach(cluster => {
         const list = map.get(cluster);
         if (!list || !list.length) return;
         const wrap = document.createElement('div');
         wrap.className = 'cluster';
+        wrap.id = 'cluster-' + slugify(cluster);
         const badge = `<span class="badge">${list.length}</span>`;
         wrap.innerHTML = `<h3>${cluster} ${badge}</h3>`;
         const ul = document.createElement('ul');
         list.forEach(it => {
           const li = document.createElement('li');
           const provTxt = it.provider ? ` (${it.provider})` : '';
-          const link = it.link && /^https?:\/\//i.test(it.link) ? it.link : '';
-          li.innerHTML = link
+          const link = (it.link || '').trim();
+          li.innerHTML = link && /^https?:\/\//i.test(link)
             ? `<a href="${link}" target="_blank" rel="noopener noreferrer">${it.title || '(Untitled)'}</a>${provTxt}`
             : `${it.title || '(Untitled)'}${provTxt}`;
           ul.appendChild(li);
@@ -859,14 +397,58 @@ The course demonstrates how to use APIs to build and deploy AI applications, inc
       });
     }
 
-    // Boot: parse embedded CSV and render
-    (function initCertsFromEmbeddedCSV(){
-      const node = document.getElementById('embedded-csv');
-      if (!node) return;
-      const text = node.textContent || '';
-      const rows = parseCSV(text);
-      const items = rowsToItems(rows);
-      renderCerts(items);
+    /* ---------- Search ---------- */
+    function applyFilter(query) {
+      const q = (query || '').toLowerCase().trim();
+      if (!q) return ALL_ITEMS.slice();
+
+      return ALL_ITEMS.filter(it => {
+        const t = (it.title || '').toLowerCase();
+        const p = (it.provider || '').toLowerCase();
+        return t.includes(q) || p.includes(q);
+      });
+    }
+    function debounce(fn, delay=200) {
+      let to = null;
+      return (...args) => {
+        clearTimeout(to);
+        to = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    const onSearch = debounce(() => {
+      const loadedCount = ALL_ITEMS.length;
+      const q = document.getElementById('cert-search').value;
+      const filtered = applyFilter(q);
+      setStatus(loadedCount, filtered.length);
+      renderCerts(filtered);
+    }, 150);
+
+    /* ---------- Boot ---------- */
+    (async function init() {
+      try {
+        const text = await loadCSV('CourseraCerts.csv');
+        const rows = parseCSV(text);
+        ALL_ITEMS = rowsToItems(rows);
+
+        // Initial render (unfiltered)
+        setStatus(ALL_ITEMS.length, ALL_ITEMS.length);
+        renderCerts(ALL_ITEMS);
+
+        // Wire search events
+        document.getElementById('cert-search').addEventListener('input', onSearch);
+        document.getElementById('clear-search').addEventListener('click', () => {
+          const inp = document.getElementById('cert-search');
+          inp.value = '';
+          setStatus(ALL_ITEMS.length, ALL_ITEMS.length);
+          renderCerts(ALL_ITEMS);
+          inp.focus();
+        });
+
+      } catch (err) {
+        setStatus(0, 0, 'Could not read CourseraCerts.csv from this folder. Serve the page via a local server or check the filename.');
+        console.error(err);
+      }
     })();
   </script>
 </body>
