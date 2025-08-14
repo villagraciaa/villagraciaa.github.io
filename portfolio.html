@@ -9,7 +9,7 @@
     h1, h2 { color: #2c3e50; }
     h2 { border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 32px; }
 
-    /* Top right nav (external) */
+    /* Top nav (external links) */
     nav.top {
       position: fixed; top: 0; right: 0; background: #fff; padding: 10px 20px;
       border-bottom-left-radius: 10px; box-shadow: -2px 2px 10px rgba(0,0,0,0.1); z-index: 1000;
@@ -28,7 +28,7 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* Tables & lists (preserved) */
+    /* Tables & lists */
     table {
       width: 100%; border-collapse: collapse; margin-top: 30px; background: #fff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 14px;
@@ -40,16 +40,14 @@
 
     ul { padding-left: 20px; }
     li { margin-bottom: 8px; }
-    .tag { display: inline-block; padding: 2px 8px; margin-left: 6px; font-size: 11px; color: #fff;
-           background: #6c757d; border-radius: 10px; vertical-align: middle; }
-    .tag.new { background: #27ae60; }
+    .tag { display: inline-block; padding: 2px 8px; margin-left: 6px; font-size: 11px; color: #fff; background: #6c757d; border-radius: 10px; }
 
-    /* Mini spec list */
+    /* Meta list under projects */
     ul.meta { margin: 6px 0 12px 18px; padding-left: 12px; color: #3d4f60; font-size: 13px; }
     ul.meta li { margin: 2px 0; }
     ul.meta em { color: #22313f; font-style: normal; font-weight: 600; }
 
-    /* Certifications helpers */
+    /* Certifications layout */
     .cluster { margin: 18px 0; scroll-margin-top: 80px; }
     .cluster h3 { margin-bottom: 8px; }
     .badge {
@@ -57,14 +55,6 @@
       border: 1px solid #cfe6ff; margin-left: 6px; vertical-align: middle;
     }
     .hint { font-size: 12px; color: #556; }
-
-    .status {
-      margin: 12px 0 8px; padding: 10px 12px; border-radius: 10px; display: inline-flex; gap: 10px; align-items: center;
-      border: 1px solid #d0e6d9; background: #eefaf1; color: #1d5f2e; font-weight: 600;
-    }
-    .status.error { border-color: #f5c2c7; background: #fff1f2; color: #7f1d1d; }
-    .status .dot { width: 10px; height: 10px; border-radius: 50%; background: #27ae60; }
-    .status.error .dot { background: #e74c3c; }
 
     /* Legend chips */
     .legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
@@ -82,12 +72,9 @@
     .chip.all .count { background: rgba(255,255,255,0.2); }
 
     /* Search */
-    .searchbar {
-      margin: 8px 0 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
-    }
+    .searchbar { margin: 8px 0 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .searchbar input[type="search"] {
-      flex: 1 1 320px; padding: 10px 12px; border-radius: 10px; border: 1px solid #d0d7de; background: #fff;
-      font-size: 14px;
+      flex: 1 1 320px; padding: 10px 12px; border-radius: 10px; border: 1px solid #d0d7de; background: #fff; font-size: 14px;
     }
     .searchbar .clear {
       padding: 8px 12px; border-radius: 10px; border: 1px solid #d0d7de; background: #fff; cursor: pointer; font-weight: 600;
@@ -114,324 +101,324 @@
     <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-certs" id="tab-certs">Certifications</button>
   </div>
 
-  <!-- ===== Projects Panel ===== -->
+  <!-- ================= Projects ================= -->
   <section id="panel-portfolio" class="tab-panel active" role="tabpanel" aria-labelledby="tab-portfolio">
-
+    <!-- Your full Projects content (as in your latest version) -->
     <h2>Data Engineering & Pipelines</h2>
     <ul>
       <li><strong><a href="https://faculty-scheduler.streamlit.app">Faculty Load Assignment System</a></strong> (2022–2024)<br>
-          Automated course–faculty matching with policy-aware constraints.
-          <ul class="meta">
-            <li><em>Objectives:</em> Eliminate allocation conflicts, meet max unit loads, keep location/day coherence.</li>
-            <li><em>Key Features:</em> Availability parsing, decision-tree rules, load balancing, violation flags, summary KPIs.</li>
-            <li><em>Tech:</em> Python, pandas, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> 100% of prior conflicts resolved; faster committee approvals.</li>
-          </ul>
+        Automated course–faculty matching with policy-aware constraints.
+        <ul class="meta">
+          <li><em>Objectives:</em> Eliminate allocation conflicts, meet max unit loads, keep location/day coherence.</li>
+          <li><em>Key Features:</em> Availability parsing, decision-tree rules, load balancing, violation flags, summary KPIs.</li>
+          <li><em>Tech:</em> Python, pandas, Plotly, Streamlit.</li>
+          <li><em>Impact:</em> 100% of prior conflicts resolved; faster committee approvals.</li>
+        </ul>
       </li>
       <li><strong><a href="https://clouddata.streamlit.app/">Cloud Data Engineering Simulator</a></strong> (2025)<br>
-          DAG-style orchestration with DBT-like SQL transforms and REST ingestion.
-          <ul class="meta">
-            <li><em>Objectives:</em> Teach/data-room demo for cloud ELT patterns.</li>
-            <li><em>Key Features:</em> Node/edge editor, schema lineage, incremental loads, data quality checks.</li>
-            <li><em>Tech:</em> Streamlit, DuckDB, SQL (DBT-style), REST.</li>
-            <li><em>Impact:</em> Cut onboarding time for analysts by ~30% via hands-on simulations.</li>
-          </ul>
+        DAG-style orchestration with DBT-like SQL transforms and REST ingestion.
+        <ul class="meta">
+          <li><em>Objectives:</em> Teach/data-room demo for cloud ELT patterns.</li>
+          <li><em>Key Features:</em> Node/edge editor, schema lineage, incremental loads, data quality checks.</li>
+          <li><em>Tech:</em> Streamlit, DuckDB, SQL (DBT-style), REST.</li>
+          <li><em>Impact:</em> Cut onboarding time for analysts by ~30% via hands-on simulations.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Dashboards & KPI Reporting</h2>
     <ul>
       <li><strong><a href="https://m365-kpi.streamlit.app/">Digital Adoption Dashboard</a></strong> (2025)<br>
-          M365 usage funnels, cohort uptake, and feature adoption KPIs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Centralize adoption telemetry for business stakeholders.</li>
-            <li><em>Key Features:</em> Funnel views, active/DAU/MAU trends, feature heatmaps, alerts.</li>
-            <li><em>Tech:</em> Streamlit, Plotly, pandas.</li>
-            <li><em>Impact:</em> Identified low-uptake features; drove targeted enablement.</li>
-          </ul>
+        M365 usage funnels, cohort uptake, and feature adoption KPIs.
+        <ul class="meta">
+          <li><em>Objectives:</em> Centralize adoption telemetry for business stakeholders.</li>
+          <li><em>Key Features:</em> Funnel views, active/DAU/MAU trends, feature heatmaps, alerts.</li>
+          <li><em>Tech:</em> Streamlit, Plotly, pandas.</li>
+          <li><em>Impact:</em> Identified low-uptake features; drove targeted enablement.</li>
+        </ul>
       </li>
       <li><strong><a href="https://shdi-dashboard.streamlit.app/">SHDI Analysis Dashboard</a></strong> (2024)<br>
-          Canada Subnational Human Development Index explorer.
-          <ul class="meta">
-            <li><em>Objectives:</em> Reveal regional disparities across education, health, income.</li>
-            <li><em>Key Features:</em> Time-series by region, map overlays, distribution plots.</li>
-            <li><em>Tech:</em> pandas, seaborn, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Supported policy discussions on targeted interventions.</li>
-          </ul>
+        Canada Subnational Human Development Index explorer.
+        <ul class="meta">
+          <li><em>Objectives:</em> Reveal regional disparities across education, health, income.</li>
+          <li><em>Key Features:</em> Time-series by region, map overlays, distribution plots.</li>
+          <li><em>Tech:</em> pandas, seaborn, Plotly, Streamlit.</li>
+          <li><em>Impact:</em> Supported policy discussions on targeted interventions.</li>
+        </ul>
       </li>
-      <li><strong><a href="https://hospitalit.streamlit.app/" title="Deployed app/repo link ">Hospitality ETL + KPIs + Forecasts</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Property/segment ETL with forecasting and interval bands.
-          <ul class="meta">
-            <li><em>Objectives:</em> Unify ADR/RevPAR dashboards with model-aware uncertainty.</li>
-            <li><em>Key Features:</em> Model selector, prediction intervals, remarks panel, volatility fallback.</li>
-            <li><em>Tech:</em> Python, SQLite, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Clearer decisions on promo timing and occupancy targets.</li>
-          </ul>
+      <li><strong><a href="https://hospitalit.streamlit.app/" title="Deployed app/repo link ">Hospitality ETL + KPIs + Forecasts</a></strong> (2025) <span class="tag">NEW</span><br>
+        Property/segment ETL with forecasting and interval bands.
+        <ul class="meta">
+          <li><em>Objectives:</em> Unify ADR/RevPAR dashboards with model-aware uncertainty.</li>
+          <li><em>Key Features:</em> Model selector, prediction intervals, remarks panel, volatility fallback.</li>
+          <li><em>Tech:</em> Python, SQLite, Plotly, Streamlit.</li>
+          <li><em>Impact:</em> Clearer decisions on promo timing and occupancy targets.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Scientific & Lab Automation</h2>
     <ul>
-      <li><strong><a href="https://data-spectroscopy.streamlit.app/" title="Deployed app/repo link ">Spectroscopy Data Workflow Optimization</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Batch cleaning/normalization/visualization for spectroscopy runs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Reduce manual prep and normalize across instruments/batches.</li>
-            <li><em>Key Features:</em> Baseline correction, peak detect/integration, QC flags, batch compare.</li>
-            <li><em>Tech:</em> Python, numpy/pandas, Streamlit, Plotly.</li>
-            <li><em>Impact:</em> ~40% throughput improvement in experiment cycles.</li>
-          </ul>
+      <li><strong><a href="https://data-spectroscopy.streamlit.app/" title="Deployed app/repo link ">Spectroscopy Data Workflow Optimization</a></strong> (2025) <span class="tag">NEW</span><br>
+        Batch cleaning/normalization/visualization for spectroscopy runs.
+        <ul class="meta">
+          <li><em>Objectives:</em> Reduce manual prep and normalize across instruments/batches.</li>
+          <li><em>Key Features:</em> Baseline correction, peak detect/integration, QC flags, batch compare.</li>
+          <li><em>Tech:</em> Python, numpy/pandas, Streamlit, Plotly.</li>
+          <li><em>Impact:</em> ~40% throughput improvement in experiment cycles.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Machine Learning & AI</h2>
     <ul>
       <li><strong><a href="https://polymer-predictor.streamlit.app">Open Polymer Property Prediction</a></strong> (2025)<br>
-          ML for density, k, Tg, Rg, FFV from SMILES.
-          <ul class="meta">
-            <li><em>Objectives:</em> Rapid screening of candidate polymers.</li>
-            <li><em>Key Features:</em> RDKit descriptors, LightGBM models, CV w/ wMAE metric.</li>
-            <li><em>Tech:</em> RDKit, LightGBM, scikit-learn, Streamlit.</li>
-            <li><em>Impact:</em> Prioritized candidates, cut wet-lab trials.</li>
-          </ul>
+        ML for density, k, Tg, Rg, FFV from SMILES.
+        <ul class="meta">
+          <li><em>Objectives:</em> Rapid screening of candidate polymers.</li>
+          <li><em>Key Features:</em> RDKit descriptors, LightGBM models, CV w/ wMAE metric.</li>
+          <li><em>Tech:</em> RDKit, LightGBM, scikit-learn, Streamlit.</li>
+          <li><em>Impact:</em> Prioritized candidates, cut wet-lab trials.</li>
+        </ul>
       </li>
       <li><strong><a href="https://ai-supplychain.streamlit.app/">Demand-Supply RL Matching System</a></strong> (2025)<br>
-          Q-learning & PPO for dynamic allocation.
-          <ul class="meta">
-            <li><em>Objectives:</em> Lift fill-rate and reduce unmet demand under constraints.</li>
-            <li><em>Key Features:</em> RL vs LP baseline, reward curves, scenario stress tests.</li>
-            <li><em>Tech:</em> Python, Stable-Baselines3 (PPO), NumPy, Streamlit.</li>
-            <li><em>Impact:</em> Higher fill-rate vs baseline in variable demand regimes.</li>
-          </ul>
+        Q-learning & PPO for dynamic allocation.
+        <ul class="meta">
+          <li><em>Objectives:</em> Lift fill-rate and reduce unmet demand under constraints.</li>
+          <li><em>Key Features:</em> RL vs LP baseline, reward curves, scenario stress tests.</li>
+          <li><em>Tech:</em> Python, Stable-Baselines3 (PPO), NumPy, Streamlit.</li>
+          <li><em>Impact:</em> Higher fill-rate vs baseline in variable demand regimes.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Document & Semantic Search</h2>
     <ul>
       <li><strong><a href="https://makeresume.streamlit.app/">Resume Parser + Formatter</a></strong> (2024)<br>
-          Skills extraction, match scores, export-ready templates.
-          <ul class="meta">
-            <li><em>Objectives:</em> Speed up resume tailoring and ATS alignment.</li>
-            <li><em>Key Features:</em> Section detection, quantified bullets, job-match scoring.</li>
-            <li><em>Tech:</em> python-docx, regex, pandas, Streamlit.</li>
-            <li><em>Impact:</em> Consistent, ATS-friendly output in minutes.</li>
-          </ul>
+        Skills extraction, match scores, export-ready templates.
+        <ul class="meta">
+          <li><em>Objectives:</em> Speed up resume tailoring and ATS alignment.</li>
+          <li><em>Key Features:</em> Section detection, quantified bullets, job-match scoring.</li>
+          <li><em>Tech:</em> python-docx, regex, pandas, Streamlit.</li>
+          <li><em>Impact:</em> Consistent, ATS-friendly output in minutes.</li>
+        </ul>
       </li>
       <li><strong><a href="https://rag-docs.streamlit.app">Semantic Search & RAG Engine</a></strong> (2024)<br>
-          Hybrid retrieval + LLM synthesis for enterprise docs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Trustworthy answers with source-grounding.</li>
-            <li><em>Key Features:</em> FAISS vectors, chunking, source-cited responses, preview.</li>
-            <li><em>Tech:</em> LangChain, FAISS, OpenAI API, Streamlit.</li>
-            <li><em>Impact:</em> Reduced time-to-answer for knowledge queries.</li>
-          </ul>
+        Hybrid retrieval + LLM synthesis for enterprise docs.
+        <ul class="meta">
+          <li><em>Objectives:</em> Trustworthy answers with source-grounding.</li>
+          <li><em>Key Features:</em> FAISS vectors, chunking, source-cited responses, preview.</li>
+          <li><em>Tech:</em> LangChain, FAISS, OpenAI API, Streamlit.</li>
+          <li><em>Impact:</em> Reduced time-to-answer for knowledge queries.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Security & Compliance</h2>
     <ul>
       <li><strong><a href="https://securehealth-db.streamlit.app">SecureHealth MySQL System</a></strong> (2025)<br>
-          HIPAA/GDPR-aligned patient DB with encryption and RBAC.
-          <ul class="meta">
-            <li><em>Objectives:</em> Secure PHI access and auditability.</li>
-            <li><em>Key Features:</em> AES-at-rest, role policies, audit logs, masked views.</li>
-            <li><em>Tech:</em> MySQL, SQL, Python admin scripts.</li>
-            <li><em>Impact:</em> Tightened least-privilege and compliance posture.</li>
-          </ul>
+        HIPAA/GDPR-aligned patient DB with encryption and RBAC.
+        <ul class="meta">
+          <li><em>Objectives:</em> Secure PHI access and auditability.</li>
+          <li><em>Key Features:</em> AES-at-rest, role policies, audit logs, masked views.</li>
+          <li><em>Tech:</em> MySQL, SQL, Python admin scripts.</li>
+          <li><em>Impact:</em> Tightened least-privilege and compliance posture.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Media Processing & Computer Vision</h2>
     <ul>
-      <li><strong><a href="https://combine-videos.streamlit.app/" title="Deployed app/repo link ">Video Overlay Studio (Logo/Text/Watermark)</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Composer for logo/text overlays and clip compositing.
-          <ul class="meta">
-            <li><em>Objectives:</em> Fast social-ready exports from raw clips.</li>
-            <li><em>Key Features:</em> Alpha PNG logos, corner placement, timeline trims, MP4 export.</li>
-            <li><em>Tech:</em> MoviePy, OpenCV, Streamlit.</li>
-            <li><em>Impact:</em> Minutes to branded assets, not hours.</li>
-          </ul>
+      <li><strong><a href="https://combine-videos.streamlit.app/" title="Deployed app/repo link ">Video Overlay Studio (Logo/Text/Watermark)</a></strong> (2025) <span class="tag">NEW</span><br>
+        Composer for logo/text overlays and clip compositing.
+        <ul class="meta">
+          <li><em>Objectives:</em> Fast social-ready exports from raw clips.</li>
+          <li><em>Key Features:</em> Alpha PNG logos, corner placement, timeline trims, MP4 export.</li>
+          <li><em>Tech:</em> MoviePy, OpenCV, Streamlit.</li>
+          <li><em>Impact:</em> Minutes to branded assets, not hours.</li>
+        </ul>
       </li>
-      <li><strong><a href="https://glowcam.streamlit.app/" title="Deployed app/repo link ">Beautify Filter App</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Portrait smoothing/tone/detail enhancement.
-          <ul class="meta">
-            <li><em>Objectives:</em> Gentle beautification without plastic look.</li>
-            <li><em>Key Features:</em> Face-aware masks, bilateral/gaussian blends, color/tone curves.</li>
-            <li><em>Tech:</em> Python, OpenCV, mediapipe (optional).</li>
-            <li><em>Impact:</em> Consistent on-device style previews.</li>
-          </ul>
+      <li><strong><a href="https://glowcam.streamlit.app/" title="Deployed app/repo link ">Beautify Filter App</a></strong> (2025) <span class="tag">NEW</span><br>
+        Portrait smoothing/tone/detail enhancement.
+        <ul class="meta">
+          <li><em>Objectives:</em> Gentle beautification without plastic look.</li>
+          <li><em>Key Features:</em> Face-aware masks, bilateral/gaussian blends, color/tone curves.</li>
+          <li><em>Tech:</em> Python, OpenCV, mediapipe (optional).</li>
+          <li><em>Impact:</em> Consistent on-device style previews.</li>
+        </ul>
       </li>
-      <li><strong><a href="#" title="CLI/Notebook utility">MOV → MP4 Converter</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Batch conversion utility with codec presets.
-          <ul class="meta">
-            <li><em>Objectives:</em> Standardize deliverables for web and mobile.</li>
-            <li><em>Key Features:</em> H.264/AAC, CRF bitrate control, resolution/frame-rate switches.</li>
-            <li><em>Tech:</em> ffmpeg (via MoviePy), Python CLI.</li>
-            <li><em>Impact:</em> Reduced upload/processing failures.</li>
-          </ul>
+      <li><strong><a href="#" title="CLI/Notebook utility">MOV → MP4 Converter</a></strong> (2025) <span class="tag">NEW</span><br>
+        Batch conversion utility with codec presets.
+        <ul class="meta">
+          <li><em>Objectives:</em> Standardize deliverables for web and mobile.</li>
+          <li><em>Key Features:</em> H.264/AAC, CRF bitrate control, resolution/frame-rate switches.</li>
+          <li><em>Tech:</em> ffmpeg (via MoviePy), Python CLI.</li>
+          <li><em>Impact:</em> Reduced upload/processing failures.</li>
+        </ul>
       </li>
-      <li><strong><a href="#" title="CLI/Notebook utility">MP3 → WAV Converter</a></strong> (2025) <span class="tag new">NEW</span><br>
-          Lightweight audio formatter for ML/ASR.
-          <ul class="meta">
-            <li><em>Objectives:</em> Normalize audio for feature extraction.</li>
-            <li><em>Key Features:</em> 16-bit PCM, 16 kHz resample, mono/stereo mixdown.</li>
-            <li><em>Tech:</em> pydub/ffmpeg, Python CLI.</li>
-            <li><em>Impact:</em> Fewer downstream pipeline errors.</li>
-          </ul>
+      <li><strong><a href="#" title="CLI/Notebook utility">MP3 → WAV Converter</a></strong> (2025) <span class="tag">NEW</span><br>
+        Lightweight audio formatter for ML/ASR.
+        <ul class="meta">
+          <li><em>Objectives:</em> Normalize audio for feature extraction.</li>
+          <li><em>Key Features:</em> 16-bit PCM, 16 kHz resample, mono/stereo mixdown.</li>
+          <li><em>Tech:</em> pydub/ffmpeg, Python CLI.</li>
+          <li><em>Impact:</em> Fewer downstream pipeline errors.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Research & Simulation</h2>
     <ul>
       <li><strong><a href="https://causal-yelp-ad.streamlit.app/">Ad Causal Inference Simulator</a></strong> (2025)<br>
-          Cluster randomization with interference modeling.
-          <ul class="meta">
-            <li><em>Objectives:</em> Quantify bias under spillovers.</li>
-            <li><em>Key Features:</em> Network generators, estimators, power/bias plots.</li>
-            <li><em>Tech:</em> Python, NetworkX, numpy, Streamlit.</li>
-            <li><em>Impact:</em> Better design choices for marketing experiments.</li>
-          </ul>
+        Cluster randomization with interference modeling.
+        <ul class="meta">
+          <li><em>Objectives:</em> Quantify bias under spillovers.</li>
+          <li><em>Key Features:</em> Network generators, estimators, power/bias plots.</li>
+          <li><em>Tech:</em> Python, NetworkX, numpy, Streamlit.</li>
+          <li><em>Impact:</em> Better design choices for marketing experiments.</li>
+        </ul>
       </li>
       <li><strong><a href="https://cam-car-strategy.streamlit.app">Cam Car Strategy Simulation</a></strong> (2024)<br>
-          Product strategy exploration with competitive forces.
-          <ul class="meta">
-            <li><em>Objectives:</em> Scenario-plan market entry.</li>
-            <li><em>Key Features:</em> Five-Forces sliders, payoff grids, sensitivity views.</li>
-            <li><em>Tech:</em> Python, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Clarified tradeoffs for leadership.</li>
-          </ul>
+        Product strategy exploration with competitive forces.
+        <ul class="meta">
+          <li><em>Objectives:</em> Scenario-plan market entry.</li>
+          <li><em>Key Features:</em> Five-Forces sliders, payoff grids, sensitivity views.</li>
+          <li><em>Tech:</em> Python, Plotly, Streamlit.</li>
+          <li><em>Impact:</em> Clarified tradeoffs for leadership.</li>
+        </ul>
       </li>
       <li><strong><a href="https://ltc-microsimulation.streamlit.app/">LTC Microsimulations for Aging Population Planning</a></strong> (2024)<br>
-          Demand/capacity planning for long-term care.
-          <ul class="meta">
-            <li><em>Objectives:</em> Forecast needs by age/acuity.</li>
-            <li><em>Key Features:</em> Transition matrices, cost models, capacity constraints.</li>
-            <li><em>Tech:</em> Python, pandas, Streamlit.</li>
-            <li><em>Impact:</em> Supported budget allocation proposals.</li>
-          </ul>
+        Demand/capacity planning for long-term care.
+        <ul class="meta">
+          <li><em>Objectives:</em> Forecast needs by age/acuity.</li>
+          <li><em>Key Features:</em> Transition matrices, cost models, capacity constraints.</li>
+          <li><em>Tech:</em> Python, pandas, Streamlit.</li>
+          <li><em>Impact:</em> Supported budget allocation proposals.</li>
+        </ul>
       </li>
       <li><strong><a href="https://ad-auctions.streamlit.app">Simulating Ad Auctions: GSP vs. VCG</a></strong> (May 2025)<br>
-          Mechanism comparison for revenue vs. efficiency.
-          <ul class="meta">
-            <li><em>Objectives:</em> Understand incentives & revenue tradeoffs.</li>
-            <li><em>Key Features:</em> Bid distributions, CTR curves, welfare/revenue charts.</li>
-            <li><em>Tech:</em> Python, Plotly, Streamlit.</li>
-            <li><em>Impact:</em> Showed GSP +15% revenue vs baseline; VCG 100% efficiency.</li>
-          </ul>
+        Mechanism comparison for revenue vs. efficiency.
+        <ul class="meta">
+          <li><em>Objectives:</em> Understand incentives & revenue tradeoffs.</li>
+          <li><em>Key Features:</em> Bid distributions, CTR curves, welfare/revenue charts.</li>
+          <li><em>Tech:</em> Python, Plotly, Streamlit.</li>
+          <li><em>Impact:</em> Showed GSP +15% revenue vs baseline; VCG 100% efficiency.</li>
+        </ul>
       </li>
       <li><strong><a href="https://abtest-network.streamlit.app">A/B Test Design with Network Effects</a></strong> (2025)<br>
-          Naive vs. cluster-randomized comparisons.
-          <ul class="meta">
-            <li><em>Objectives:</em> Measure interference-driven bias.</li>
-            <li><em>Key Features:</em> Graph topologies, spillover knobs, power curves.</li>
-            <li><em>Tech:</em> Python, NetworkX, Streamlit.</li>
-            <li><em>Impact:</em> Recommended cluster designs for social products.</li>
-          </ul>
+        Naive vs. cluster-randomized comparisons.
+        <ul class="meta">
+          <li><em>Objectives:</em> Measure interference-driven bias.</li>
+          <li><em>Key Features:</em> Graph topologies, spillover knobs, power curves.</li>
+          <li><em>Tech:</em> Python, NetworkX, Streamlit.</li>
+          <li><em>Impact:</em> Recommended cluster designs for social products.</li>
+        </ul>
       </li>
       <li><strong><a href="https://spatial-movement-pred.streamlit.app">Spatial Movement Analysis</a></strong> (Apr 2025)<br>
-          Indoor flow analytics for space planning.
-          <ul class="meta">
-            <li><em>Objectives:</em> Identify congestion and optimize layout.</li>
-            <li><em>Key Features:</em> Heatmaps, peak windows, path funnels, DBT lineage.</li>
-            <li><em>Tech:</em> Python, SQL, DBT, Plotly.</li>
-            <li><em>Impact:</em> Informed floor redesign; improved utilization.</li>
-          </ul>
+        Indoor flow analytics for space planning.
+        <ul class="meta">
+          <li><em>Objectives:</em> Identify congestion and optimize layout.</li>
+          <li><em>Key Features:</em> Heatmaps, peak windows, path funnels, DBT lineage.</li>
+          <li><em>Tech:</em> Python, SQL, DBT, Plotly.</li>
+          <li><em>Impact:</em> Informed floor redesign; improved utilization.</li>
+        </ul>
       </li>
       <li><strong><a href="https://threat-detnet.streamlit.app/">Threat Attribution using Graph Neural Networks (GNN)</a></strong> (2025)<br>
-          Actor attribution from behavior graphs.
-          <ul class="meta">
-            <li><em>Objectives:</em> Lift detection & attribution precision.</li>
-            <li><em>Key Features:</em> Heterogeneous graphs, node embeddings, ROC/PR plots.</li>
-            <li><em>Tech:</em> PyTorch Geometric, scikit-learn, Streamlit.</li>
-            <li><em>Impact:</em> +35% accuracy vs baseline heuristics.</li>
-          </ul>
+        Actor attribution from behavior graphs.
+        <ul class="meta">
+          <li><em>Objectives:</em> Lift detection & attribution precision.</li>
+          <li><em>Key Features:</em> Heterogeneous graphs, node embeddings, ROC/PR plots.</li>
+          <li><em>Tech:</em> PyTorch Geometric, scikit-learn, Streamlit.</li>
+          <li><em>Impact:</em> +35% accuracy vs baseline heuristics.</li>
+        </ul>
       </li>
       <li><strong><a href="https://player-analytics2.streamlit.app/">Player Behavior Analytics in Online Gaming</a></strong> (2024)<br>
-          Segmentation & churn risk analysis.
-          <ul class="meta">
-            <li><em>Objectives:</em> Personalize engagement campaigns.</li>
-            <li><em>Key Features:</em> RFM/k-means segments, session trends, churn flags.</li>
-            <li><em>Tech:</em> Python, pandas, scikit-learn, Plotly.</li>
-            <li><em>Impact:</em> Drove targeted retention hypothesis tests.</li>
-          </ul>
+        Segmentation & churn risk analysis.
+        <ul class="meta">
+          <li><em>Objectives:</em> Personalize engagement campaigns.</li>
+          <li><em>Key Features:</em> RFM/k-means segments, session trends, churn flags.</li>
+          <li><em>Tech:</em> Python, pandas, scikit-learn, Plotly.</li>
+          <li><em>Impact:</em> Drove targeted retention hypothesis tests.</li>
+        </ul>
       </li>
       <li><strong><a href="https://rate-forecasting-behavior.streamlit.app/">Rate Analysis and Spatial Behavior Forecasting</a></strong> (2025)<br>
-          Zone occupancy forecasting + anomaly detection.
-          <ul class="meta">
-            <li><em>Objectives:</em> Support staffing and cost planning.</li>
-            <li><em>Key Features:</em> Prophet forecasts, Bollinger bands, KPI exports.</li>
-            <li><em>Tech:</em> Streamlit, Prophet, pandas, seaborn.</li>
-            <li><em>Impact:</em> Proactive anomaly alerts; improved scheduling.</li>
-          </ul>
+        Zone occupancy forecasting + anomaly detection.
+        <ul class="meta">
+          <li><em>Objectives:</em> Support staffing and cost planning.</li>
+          <li><em>Key Features:</em> Prophet forecasts, Bollinger bands, KPI exports.</li>
+          <li><em>Tech:</em> Streamlit, Prophet, pandas, seaborn.</li>
+          <li><em>Impact:</em> Proactive anomaly alerts; improved scheduling.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Geospatial & Disaster Resilience</h2>
     <ul>
       <li><strong><a href="https://ncdri-map.streamlit.app">NCDRI Resilience Index Map</a></strong> (2024)<br>
-          Region-level climate/disaster resilience scores.
-          <ul class="meta">
-            <li><em>Objectives:</em> Visualize multi-metric resilience.</li>
-            <li><em>Key Features:</em> Choropleths, drill-down, CSV export.</li>
-            <li><em>Tech:</em> geopandas, Streamlit, Plotly.</li>
-            <li><em>Impact:</em> Informed prioritization for adaptation spend.</li>
-          </ul>
+        Region-level climate/disaster resilience scores.
+        <ul class="meta">
+          <li><em>Objectives:</em> Visualize multi-metric resilience.</li>
+          <li><em>Key Features:</em> Choropleths, drill-down, CSV export.</li>
+          <li><em>Tech:</em> geopandas, Streamlit, Plotly.</li>
+          <li><em>Impact:</em> Informed prioritization for adaptation spend.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Education & Evaluation Tools</h2>
     <ul>
       <li><strong><a href="https://demo-lecs.streamlit.app/">Demo Lecture Evaluator</a></strong> (2025)<br>
-          Rubric-based scoring with PDF output.
-          <ul class="meta">
-            <li><em>Objectives:</em> Standardize demo evaluations.</li>
-            <li><em>Key Features:</em> Dynamic rubrics, signatures, multi-page PDFs.</li>
-            <li><em>Tech:</em> Streamlit, fpdf/ReportLab, pandas.</li>
-            <li><em>Impact:</em> Faster, auditable reviews across panels.</li>
-          </ul>
+        Rubric-based scoring with PDF output.
+        <ul class="meta">
+          <li><em>Objectives:</em> Standardize demo evaluations.</li>
+          <li><em>Key Features:</em> Dynamic rubrics, signatures, multi-page PDFs.</li>
+          <li><em>Tech:</em> Streamlit, fpdf/ReportLab, pandas.</li>
+          <li><em>Impact:</em> Faster, auditable reviews across panels.</li>
+        </ul>
       </li>
       <li><strong><a href="https://scatter-plot-app.streamlit.app">Correlation Explorer: Scatter &amp; Bubble Plots</a></strong> (2025)<br>
-          Visual correlation with labeled points and quizzes.
-          <ul class="meta">
-            <li><em>Objectives:</em> Teach correlation patterns interactively.</li>
-            <li><em>Key Features:</em> Bubble/scatter toggle, annotated clusters, quiz mode.</li>
-            <li><em>Tech:</em> Streamlit, Plotly, pandas.</li>
-            <li><em>Impact:</em> Improved data literacy in workshops.</li>
-          </ul>
+        Visual correlation with labeled points and quizzes.
+        <ul class="meta">
+          <li><em>Objectives:</em> Teach correlation patterns interactively.</li>
+          <li><em>Key Features:</em> Bubble/scatter toggle, annotated clusters, quiz mode.</li>
+          <li><em>Tech:</em> Streamlit, Plotly, pandas.</li>
+          <li><em>Impact:</em> Improved data literacy in workshops.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>CRM & Workflow Automation</h2>
     <ul>
       <li><strong><a href="https://sla-routing.streamlit.app">CRM Ticket Routing System</a></strong> (2025)<br>
-          SLA-aware routing and escalations.
-          <ul class="meta">
-            <li><em>Objectives:</em> Reduce breach risk and response time.</li>
-            <li><em>Key Features:</em> Auto-assign, SLA timers, priority queues, audit logs.</li>
-            <li><em>Tech:</em> Power Apps, Power Automate, Dataverse/SQL.</li>
-            <li><em>Impact:</em> Fewer SLA breaches; clearer ownership.</li>
-          </ul>
+        SLA-aware routing and escalations.
+        <ul class="meta">
+          <li><em>Objectives:</em> Reduce breach risk and response time.</li>
+          <li><em>Key Features:</em> Auto-assign, SLA timers, priority queues, audit logs.</li>
+          <li><em>Tech:</em> Power Apps, Power Automate, Dataverse/SQL.</li>
+          <li><em>Impact:</em> Fewer SLA breaches; clearer ownership.</li>
+        </ul>
       </li>
     </ul>
 
     <h2>Legal & Academic Process Automation</h2>
     <ul>
       <li><strong><a href="https://legal-validator.streamlit.app/">Decision Review Automation with Legal Template Validation</a></strong> (Jul 2023 – Feb 2024)<br>
-          FOIP alignment + citation/format checks.
-          <ul class="meta">
-            <li><em>Objectives:</em> Enforce consistency and compliance.</li>
-            <li><em>Key Features:</em> Regex rules, section completeness, plain-language hints.</li>
-            <li><em>Tech:</em> Python, regex, Streamlit.</li>
-            <li><em>Impact:</em> ~40% fewer post-review edits.</li>
-          </ul>
+        FOIP alignment + citation/format checks.
+        <ul class="meta">
+          <li><em>Objectives:</em> Enforce consistency and compliance.</li>
+          <li><em>Key Features:</em> Regex rules, section completeness, plain-language hints.</li>
+          <li><em>Tech:</em> Python, regex, Streamlit.</li>
+          <li><em>Impact:</em> ~40% fewer post-review edits.</li>
+        </ul>
       </li>
       <li><strong><a href="https://faculty-scheduler.streamlit.app/">Business Process Improvement in Faculty Assignment</a></strong> (Sep 2022 – Aug 2024)<br>
-          See scheduling details above; policy compliance focus.
-          <ul class="meta">
-            <li><em>Objectives:</em> Meet unit caps and day/location rules.</li>
-            <li><em>Key Features:</em> Rule engine, conflict checks, summary dashboards.</li>
-            <li><em>Tech:</em> Python, pandas, Plotly.</li>
-            <li><em>Impact:</em> 100% compliance in pilot timetables.</li>
-          </ul>
+        See scheduling details above; policy compliance focus.
+        <ul class="meta">
+          <li><em>Objectives:</em> Meet unit caps and day/location rules.</li>
+          <li><em>Key Features:</em> Rule engine, conflict checks, summary dashboards.</li>
+          <li><em>Tech:</em> Python, pandas, Plotly.</li>
+          <li><em>Impact:</em> 100% compliance in pilot timetables.</li>
+        </ul>
       </li>
     </ul>
 
@@ -469,14 +456,11 @@
         <tr><td>Correlation Explorer</td><td>Visualization Analyst</td><td>Streamlit, Plotly, pandas</td><td>Interactive correlation learning</td></tr>
       </tbody>
     </table>
-
   </section>
 
-  <!-- ===== Certifications Panel ===== -->
+  <!-- ================= Certifications ================= -->
   <section id="panel-certs" class="tab-panel" role="tabpanel" aria-labelledby="tab-certs">
     <h2>Certifications</h2>
-
-    <div id="status" class="status" hidden><span class="dot"></span><span class="msg"></span></div>
 
     <!-- Search -->
     <div class="searchbar">
@@ -484,10 +468,10 @@
       <button class="clear" id="clear-search" type="button">Clear</button>
     </div>
 
-    <!-- Dynamic legend -->
+    <!-- Cluster legend (scroll-to) -->
     <div id="legend" class="legend" aria-label="Certification clusters"></div>
 
-    <!-- Clustered output -->
+    <!-- Dynamic clustered list -->
     <div id="cert-output"></div>
 
     <h3>Badge Portfolios & Evidence</h3>
@@ -499,13 +483,13 @@
       <li><a href="https://badges.wes.org/Evidence?i=287ba744-1800-45e1-b407-65a2e4f5244c&type=ca" target="_blank" rel="noopener noreferrer">WES — Evidence</a></li>
       <li><a href="https://drive.google.com/file/d/1WUtWZotXT7r11-WNWQ1zGqrr38lvECVv/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Coursera Certificates (PDF)</a></li>
     </ul>
-    <p class="hint">Clusters: Data Science & Analytics, Machine Learning & AI, <strong>Prompt Engineering & GenAI Apps</strong>, <strong>BI & Dashboards</strong>, <strong>Product & Project Management</strong>, <strong>Cloud Platforms</strong>, <strong>DevOps & Infrastructure</strong>, <strong>Big Data & Spark</strong>, Finance & Quantitative Analysis, Other / Domain‑Specific. Titles are alphabetized; issuers shown in parentheses.</p>
+    <p class="hint">Grouped by category. Titles are alphabetized; issuer shown in parentheses.</p>
   </section>
 
   <div class="footer">© 2025 Al Rey Villagracia</div>
 
   <script>
-    /* ---------- Tabs ---------- */
+    /* ========== Tabs ========== */
     const tabs = Array.from(document.querySelectorAll('.tab-btn'));
     const panels = {
       portfolio: document.getElementById('panel-portfolio'),
@@ -527,7 +511,7 @@
     const initial = (location.hash || '#portfolio').replace('#', '');
     if (['portfolio','certs'].includes(initial)) activateTab(initial);
 
-    /* ---------- CSV fetch & parse ---------- */
+    /* ========== CSV read & parse ========== */
     async function loadCSV(path) {
       const res = await fetch(path, { cache: 'no-store' });
       if (!res.ok) throw new Error('Failed to load ' + path + ' (' + res.status + ')');
@@ -538,29 +522,21 @@
       let i = 0, cur = '', inQuotes = false, row = [];
       while (i < text.length) {
         const c = text[i];
-        if (c === '"') {
-          if (inQuotes && text[i+1] === '"') { cur += '"'; i++; }
-          else { inQuotes = !inQuotes; }
-        } else if (c === ',' && !inQuotes) {
-          row.push(cur.trim()); cur = '';
-        } else if ((c === '\n' || c === '\r') && !inQuotes) {
+        if (c === '"') { if (inQuotes && text[i+1] === '"') { cur += '"'; i++; } else { inQuotes = !inQuotes; } }
+        else if (c === ',' && !inQuotes) { row.push(cur.trim()); cur = ''; }
+        else if ((c === '\n' || c === '\r') && !inQuotes) {
           if (cur.length || row.length) { row.push(cur.trim()); rows.push(row); row = []; cur = ''; }
-          if (c === '\r' && text[i+1] === '\n') i++; // CRLF
+          if (c === '\r' && text[i+1] === '\n') i++;
         } else { cur += c; }
         i++;
       }
       if (cur.length || row.length) { row.push(cur.trim()); rows.push(row); }
       return rows.filter(r => r.length && r.some(x => x !== ''));
     }
-    function normalizeHeaders(hdrs) {
-      return hdrs.map(h => (h || '').toString().trim().toLowerCase().replace(/\s+/g,' '));
-    }
+    const normalizeHeaders = hdrs => hdrs.map(h => (h || '').toString().trim().toLowerCase().replace(/\s+/g,' '));
     function findCols(headers) {
       const h = normalizeHeaders(headers);
-      const col = (regexArr) => {
-        for (let idx=0; idx<h.length; idx++) if (regexArr.some(r => r.test(h[idx]))) return idx;
-        return -1;
-      };
+      const col = (rx) => { for (let idx=0; idx<h.length; idx++) if (rx.some(r => r.test(h[idx]))) return idx; return -1; };
       return {
         company: col([/company|issuer|provider|organization|org/i]),
         title: col([/title|name|course|cert/i]),
@@ -571,8 +547,7 @@
     }
     function rowsToItems(rows) {
       if (!rows.length) return [];
-      const headers = rows[0];
-      const cols = findCols(headers);
+      const headers = rows[0], cols = findCols(headers);
       const items = [];
       for (let i=1; i<rows.length; i++) {
         const r = rows[i];
@@ -583,13 +558,12 @@
           description: cols.desc >= 0 ? r[cols.desc] : '',
           category: cols.category >= 0 ? r[cols.category] : ''
         };
-        const hasAny = Object.values(it).some(v => (v || '').trim() !== '');
-        if (hasAny) items.push(it);
+        if (Object.values(it).some(v => (v || '').trim() !== '')) items.push(it);
       }
       return items;
     }
 
-    /* ---------- Cluster logic (robust mapping + split Business) ---------- */
+    /* ========== Clustering (robust mapping + Business split) ========== */
     const ORDERED_CLUSTERS = [
       'Data Science & Analytics',
       'Machine Learning & AI',
@@ -602,78 +576,60 @@
       'Finance & Quantitative Analysis',
       'Other / Domain-Specific'
     ];
-    function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
-
-    function norm(s='') {
-      return String(s).replace(/[–—−]/g,'-').replace(/\s+/g,' ').trim();
-    }
-    function low(s=''){ return norm(s).toLowerCase(); }
+    const slugify = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+    const norm = (s='') => String(s).replace(/[–—−]/g,'-').replace(/\s+/g,' ').trim();
+    const low  = (s='') => norm(s).toLowerCase();
 
     const ALIASES = new Map([
-      ['genai', 'Prompt Engineering & GenAI Apps'],
-      ['prompt engineering', 'Prompt Engineering & GenAI Apps'],
-      ['prompt engineering & genai apps', 'Prompt Engineering & GenAI Apps'],
-      ['generative ai', 'Prompt Engineering & GenAI Apps'],
-
-      ['ml', 'Machine Learning & AI'],
-      ['machine learning', 'Machine Learning & AI'],
-      ['ai', 'Machine Learning & AI'],
-
-      ['data science', 'Data Science & Analytics'],
-      ['analytics', 'Data Science & Analytics'],
-      ['data science & analytics', 'Data Science & Analytics'],
-
-      ['cloud', 'Cloud Platforms'],
-      ['cloud platforms', 'Cloud Platforms'],
-
-      ['devops', 'DevOps & Infrastructure'],
-      ['infrastructure', 'DevOps & Infrastructure'],
-      ['devops & infrastructure', 'DevOps & Infrastructure'],
-
-      ['big data', 'Big Data & Spark'],
-      ['spark', 'Big Data & Spark'],
-
-      ['finance', 'Finance & Quantitative Analysis'],
-      ['accounting', 'Finance & Quantitative Analysis'],
-
-      ['business analytics & bi', 'BUSINESS_NEEDS_SPLIT'],
-      ['business analytics', 'BUSINESS_NEEDS_SPLIT'],
-      ['bi', 'BI & Dashboards'],
-      ['product management', 'Product & Project Management'],
-      ['project management', 'Product & Project Management']
+      // Prompt/GenAI
+      ['genai','Prompt Engineering & GenAI Apps'],
+      ['prompt engineering','Prompt Engineering & GenAI Apps'],
+      ['prompt engineering & genai apps','Prompt Engineering & GenAI Apps'],
+      ['generative ai','Prompt Engineering & GenAI Apps'],
+      // ML/AI
+      ['ml','Machine Learning & AI'], ['machine learning','Machine Learning & AI'], ['ai','Machine Learning & AI'],
+      // DS/Analytics
+      ['data science','Data Science & Analytics'], ['analytics','Data Science & Analytics'], ['data science & analytics','Data Science & Analytics'],
+      // Cloud
+      ['cloud','Cloud Platforms'], ['cloud platforms','Cloud Platforms'],
+      // DevOps/Infra
+      ['devops','DevOps & Infrastructure'], ['infrastructure','DevOps & Infrastructure'], ['devops & infrastructure','DevOps & Infrastructure'],
+      // Big Data
+      ['big data','Big Data & Spark'], ['spark','Big Data & Spark'],
+      // Finance
+      ['finance','Finance & Quantitative Analysis'], ['accounting','Finance & Quantitative Analysis'],
+      // Business (legacy label to split)
+      ['business analytics & bi','BUSINESS_SPLIT'], ['business analytics','BUSINESS_SPLIT'],
+      // Directs
+      ['bi','BI & Dashboards'], ['product management','Product & Project Management'], ['project management','Product & Project Management']
     ]);
-
     const KW = {
       prompt: ['prompt','vertex ai','gemini','llm','chatbot','rag','generative ai','gpt','langchain'],
-      mlai: ['machine learning','deep learning','neural','artificial intelligence','nlp','transformer','pytorch','keras','tensorflow','scikit-learn','auc','roc','unsupervised','supervised'],
-      dsa: ['data analysis','data analyst','statistics','statistical','pandas','excel','visualization','plotly','ab testing','a/b testing','powerquery','rdbms','sql','feature engineering','eda'],
-      bi: ['power bi','business intelligence','tableau','looker','dashboard','excel dashboard','reporting','visualization'],
-      ppm: ['project management','pmp','scrum','kanban','agile','content marketing','sales operations','proposal','product management','roadmap'],
-      cloud: ['azure','aws','gcp','google cloud','cloud computing','virtual machine','vm','hyper-v','vertex ai studio'],
-      devops: ['kubernetes','docker','devops','jenkins','ci/cd','cicd','github actions','infrastructure as code','iac','scaling applications','k8s'],
-      bigdata: ['spark','pyspark','big data','mllib','hadoop'],
-      fin: ['finance','accounting','financial','portfolio','budget','bookkeep','quickbooks','cpa','statement']
+      mlai:   ['machine learning','deep learning','neural','artificial intelligence','nlp','transformer','pytorch','keras','tensorflow','scikit-learn'],
+      dsa:    ['data analysis','data analyst','statistics','statistical','pandas','excel','visualization','plotly','a/b','ab testing','sql','eda'],
+      bi:     ['power bi','business intelligence','tableau','looker','dashboard','excel dashboard','reporting','visualization'],
+      ppm:    ['project management','pmp','scrum','kanban','agile','product management','roadmap'],
+      cloud:  ['azure','aws','gcp','google cloud','cloud computing','virtual machine','vm','hyper-v'],
+      devops: ['kubernetes','docker','devops','jenkins','ci/cd','github actions','infrastructure as code','iac','k8s'],
+      bigdata:['spark','pyspark','big data','hadoop'],
+      fin:    ['finance','accounting','financial','portfolio','budget','bookkeep','quickbooks','cpa','statement']
     };
     const IN = (hay, arr) => arr.some(k => hay.includes(k));
 
     function normalizeCategory(category, title, description) {
-      const t = low(title);
-      const d = low(description);
-      const hay = (t + ' ' + d).trim();
-
+      const t = low(title), d = low(description), hay = (t + ' ' + d).trim();
       const raw = low(category);
       if (raw) {
         const alias = ALIASES.get(raw) || null;
-        if (alias && alias !== 'BUSINESS_NEEDS_SPLIT') return alias;
-        if (alias === 'BUSINESS_NEEDS_SPLIT') {
-          if (IN(hay, KW.bi)) return 'BI & Dashboards';
+        if (alias && alias !== 'BUSINESS_SPLIT') return alias;
+        if (alias === 'BUSINESS_SPLIT') {
+          if (IN(hay, KW.bi))  return 'BI & Dashboards';
           if (IN(hay, KW.ppm)) return 'Product & Project Management';
           if (/dashboard|visual/i.test(hay)) return 'BI & Dashboards';
           return 'Product & Project Management';
         }
         if (ORDERED_CLUSTERS.includes(norm(category))) return norm(category);
       }
-
       if (IN(hay, KW.prompt)) return 'Prompt Engineering & GenAI Apps';
       if (IN(hay, KW.mlai))   return 'Machine Learning & AI';
       if (IN(hay, KW.dsa))    return 'Data Science & Analytics';
@@ -701,36 +657,15 @@
       return { map, ordered: [...known, ...extras] };
     }
 
-    /* ---------- Rendering + Search ---------- */
-    let ALL_ITEMS = [];
-    const EXPECTED_COUNT = 52;
-
-    function setStatus(loadedCount, shownCount, errorMsg='') {
-      const box = document.getElementById('status');
-      const msg = box.querySelector('.msg');
-      box.hidden = false;
-
-      const loadedOK = loadedCount === EXPECTED_COUNT;
-      box.classList.toggle('error', !loadedOK || !!errorMsg);
-
-      if (errorMsg) { msg.textContent = errorMsg; return; }
-
-      const base = loadedOK
-        ? `Loaded ${loadedCount} certifications (✓ all ${EXPECTED_COUNT} present)`
-        : `Loaded ${loadedCount} certifications — expected ${EXPECTED_COUNT}`;
-
-      msg.textContent = (shownCount !== loadedCount)
-        ? `${base} · Showing ${shownCount} after filter`
-        : base;
-    }
-
-    function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+    /* ========== Render (legend + groups) ========== */
+    let ALL_ITEMS = [];  // from CSV
 
     function renderLegend(ordered, map) {
       const legend = document.getElementById('legend');
       legend.innerHTML = '';
       const total = Array.from(map.values()).reduce((n, arr) => n + arr.length, 0);
 
+      // "All" chip scrolls back to top of list
       const allChip = document.createElement('button');
       allChip.className = 'chip all';
       allChip.innerHTML = `<span>All</span><span class="count">${total}</span>`;
@@ -743,8 +678,7 @@
         chip.className = 'chip';
         chip.innerHTML = `<span>${cluster}</span><span class="count">${count}</span>`;
         chip.onclick = () => {
-          const id = 'cluster-' + slugify(cluster);
-          const el = document.getElementById(id);
+          const el = document.getElementById('cluster-' + slugify(cluster));
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         };
         legend.appendChild(chip);
@@ -754,7 +688,6 @@
     function renderCerts(items) {
       const out = document.getElementById('cert-output');
       out.innerHTML = '';
-
       const { map, ordered } = groupAlphabetize(items);
       renderLegend(ordered, map);
 
@@ -764,16 +697,16 @@
         const wrap = document.createElement('div');
         wrap.className = 'cluster';
         wrap.id = 'cluster-' + slugify(cluster);
-        const badge = `<span class="badge">${list.length}</span>`;
-        wrap.innerHTML = `<h3>${cluster} ${badge}</h3>`;
+        wrap.innerHTML = `<h3>${cluster} <span class="badge">${list.length}</span></h3>`;
         const ul = document.createElement('ul');
         list.forEach(it => {
-          const li = document.createElement('li');
-          const provTxt = it.provider ? ` (${it.provider})` : '';
+          const prov = it.provider ? ` (${it.provider})` : '';
           const link = (it.link || '').trim();
+          const title = it.title || '(Untitled)';
+          const li = document.createElement('li');
           li.innerHTML = link && /^https?:\/\//i.test(link)
-            ? `<a href="${link}" target="_blank" rel="noopener noreferrer">${it.title || '(Untitled)'}</a>${provTxt}`
-            : `${it.title || '(Untitled)'}${provTxt}`;
+            ? `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>${prov}`
+            : `${title}${prov}`;
           ul.appendChild(li);
         });
         wrap.appendChild(ul);
@@ -781,6 +714,7 @@
       });
     }
 
+    /* ========== Search (title or issuer) ========== */
     function applyFilter(query) {
       const q = (query || '').toLowerCase().trim();
       if (!q) return ALL_ITEMS.slice();
@@ -790,40 +724,34 @@
         return t.includes(q) || p.includes(q);
       });
     }
-    function debounce(fn, delay=200) {
-      let to = null;
-      return (...args) => { clearTimeout(to); to = setTimeout(() => fn(...args), delay); };
-    }
+    function debounce(fn, d=180){ let to=null; return (...a)=>{ clearTimeout(to); to=setTimeout(()=>fn(...a),d); }; }
     const onSearch = debounce(() => {
-      const loadedCount = ALL_ITEMS.length;
       const q = document.getElementById('cert-search').value;
-      const filtered = applyFilter(q);
-      setStatus(loadedCount, filtered.length);
-      renderCerts(filtered);
+      renderCerts(applyFilter(q));
     }, 150);
 
-    /* ---------- Boot ---------- */
+    /* ========== Boot ========== */
     (async function init() {
       try {
         const text = await loadCSV('CourseraCerts.csv');
         const rows = parseCSV(text);
         ALL_ITEMS = rowsToItems(rows);
-
-        setStatus(ALL_ITEMS.length, ALL_ITEMS.length);
         renderCerts(ALL_ITEMS);
 
+        // Wire search + clear
         document.getElementById('cert-search').addEventListener('input', onSearch);
         document.getElementById('clear-search').addEventListener('click', () => {
           const inp = document.getElementById('cert-search');
           inp.value = '';
-          setStatus(ALL_ITEMS.length, ALL_ITEMS.length);
           renderCerts(ALL_ITEMS);
           inp.focus();
         });
-
-      } catch (err) {
-        setStatus(0, 0, 'Could not read CourseraCerts.csv from this folder. Serve the page via a local server or check the filename.');
-        console.error(err);
+      } catch (e) {
+        console.error('Could not read CourseraCerts.csv. Serve locally via http and verify filename.', e);
+        document.getElementById('cert-output').innerHTML =
+          '<p style="color:#7f1d1d;background:#fff1f2;border:1px solid #f5c2c7;padding:10px;border-radius:8px;">' +
+          'Could not read CourseraCerts.csv from this folder. Please serve this page via a local server and verify the filename.' +
+          '</p>';
       }
     })();
   </script>
